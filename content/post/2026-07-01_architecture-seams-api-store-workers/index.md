@@ -26,7 +26,7 @@ I have built enough of these systems to stop starting there. The construction or
 
 That sequence is not documentation order. It is implementation order, and each step exists to remove a class of ambiguity before the next one begins. By the time a model worker finally enters the picture, most of the important decisions have already been made, and the model has a job instead of being asked to invent the company.
 
-## 1. Architecture: Decide Who Owns What
+## Architecture: Decide Who Owns What
 
 Architecture begins before Kubernetes, before the database schema, before the model server, and definitely before the prompt. The first question is not, “What components do we need?” The first question is, “What responsibilities exist?”
 
@@ -48,7 +48,7 @@ Architecture defines that border. It says where judgment belongs, where rules be
 
 ---
 
-## 2. Seams: Define Where Responsibility Stops
+## Seams: Define Where Responsibility Stops
 
 Once responsibilities exist, the next problem is figuring out how they touch each other. I call those boundaries **seams**, and a seam is the point where one part of the system stops knowing how another part works.
 
@@ -79,7 +79,7 @@ Those forbidden dependencies are often where the real architecture lives. They a
 
 ---
 
-## 3. API: Turn the Seam Into a Contract
+## API: Turn the Seam Into a Contract
 
 Only after I understand the seam do I design the API. This ordering is intentional because APIs are concrete, and concrete things have a nasty tendency to become permanent.
 
@@ -118,7 +118,7 @@ The consumer should not care as long as the contract remains true. That is why t
 
 ---
 
-## 4. Store: Make State Explicit
+## Store: Make State Explicit
 
 Then comes the store, and this is another place where my order differs from a lot of AI application development. Teams often start building workers first, then add persistence after they discover that the workers need memory, which frequently leads to a database containing whatever the workers happened to emit.
 
@@ -150,7 +150,7 @@ The store is where the system acquires continuity. Without it, you do not really
 
 ---
 
-## 5. Workers: Add Inference Last
+## Workers: Add Inference Last
 
 Only now do I build the workers, and by this point their lives are wonderfully constrained. A worker has an input contract, an output contract, a defined set of state it may read, a defined set of state it may write, and a clear understanding of which deterministic services are available to it.
 
@@ -184,7 +184,7 @@ The architecture decides what the job requires. The excitement of the technology
 
 ---
 
-## 6. Why the Order Matters
+## Why the Order Matters
 
 The sequence works because every layer constrains the next one. **Architecture** defines responsibility, **seams** define dependency, **APIs** define contracts, **stores** define durable state, and **workers** perform bounded work inside those constraints.
 
@@ -202,7 +202,7 @@ Each layer acts as a test of the layer before it. That is why I think of this as
 
 ---
 
-## 7. What This Looks Like in a Real System
+## What This Looks Like in a Real System
 
 When I started rebuilding PortfolioOS, I deliberately stopped thinking about it as a collection of agents. I started with responsibilities because I wanted the architecture to survive changes in models, tools, implementation languages, and deployment patterns.
 
@@ -222,7 +222,7 @@ That is the payoff. Model selection becomes an implementation decision again ins
 
 ---
 
-## 8. The Construction Rule
+## The Construction Rule
 
 When I begin a new intelligent subsystem now, I work through the same sequence every time. First, I draw the architecture and define ownership, then I define the seams and deliberately remove knowledge between components.
 
