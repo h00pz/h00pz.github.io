@@ -26,19 +26,6 @@ I have built enough of these systems to stop starting there. The construction or
 
 That sequence is not documentation order. It is implementation order, and each step exists to remove a class of ambiguity before the next one begins. By the time a model worker finally enters the picture, most of the important decisions have already been made, and the model has a job instead of being asked to invent the company.
 
-## Table of Contents
-
-1. [Architecture: Decide Who Owns What](#1-architecture-decide-who-owns-what)
-2. [Seams: Define Where Responsibility Stops](#2-seams-define-where-responsibility-stops)
-3. [API: Turn the Seam Into a Contract](#3-api-turn-the-seam-into-a-contract)
-4. [Store: Make State Explicit](#4-store-make-state-explicit)
-5. [Workers: Add Inference Last](#5-workers-add-inference-last)
-6. [Why the Order Matters](#6-why-the-order-matters)
-7. [What This Looks Like in a Real System](#7-what-this-looks-like-in-a-real-system)
-8. [The Construction Rule](#8-the-construction-rule)
-
----
-
 ## 1. Architecture: Decide Who Owns What
 
 Architecture begins before Kubernetes, before the database schema, before the model server, and definitely before the prompt. The first question is not, “What components do we need?” The first question is, “What responsibilities exist?”
