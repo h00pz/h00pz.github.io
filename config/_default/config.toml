@@ -1,0 +1,10 @@
+# Change baseurl before deploy
+baseurl = "https://h00pz.github.io/"
+locale  = "en-us"
+title   = "The Rambling Thoughts of h00pz"
+
+defaultContentLanguage = "en"
+hasCJKLanguage = false
+
+[pagination]
+    pagerSize = 5

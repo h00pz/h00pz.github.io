@@ -1,0 +1,43 @@
+mainSections = ["post"]
+rssFullContent = true
+favicon = "img/favicon.png"
+
+[footer]
+    since = 2026
+    customText = ""
+
+[dateFormat]
+    published   = ":date_full"
+    lastUpdated = ":date_full"
+
+[sidebar]
+    emoji = ""
+    subtitle = "Technology, architecture, AI, and other things I'm building."
+    avatar = "img/avatar.png"
+
+[article]
+    headingAnchor = true
+    math = false
+    readingTime = true
+
+[article.license]
+    enabled = false
+
+[widgets]
+    homepage = [
+        { type = "search" },
+        { type = "archives", params = { limit = 5 } },
+        { type = "categories", params = { limit = 10 } },
+        { type = "tag-cloud", params = { limit = 10 } },
+    ]
+
+    page = [
+        { type = "toc" }
+    ]
+
+[colorScheme]
+    toggle = true
+    default = "auto"
+
+[comments]
+    enabled = false
