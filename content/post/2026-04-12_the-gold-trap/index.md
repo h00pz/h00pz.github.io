@@ -1,6 +1,6 @@
 ---
 title: "The Gold Trap: Small Models Are Not Interchangeable"
-date: 2026-06-17
+date: 2026-04-12
 draft: false
 description: "The Gold Trap exposed an important lesson in small model selection: extracting the right facts is not the same as understanding which facts still govern."
 tags:

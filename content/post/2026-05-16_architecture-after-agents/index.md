@@ -1,7 +1,7 @@
 ---
 title: "Architecture After Agents: Why AI Apps Are Becoming Distributed Systems"
 slug: architecture-after-agents
-date: 2026-08-12
+date: 2026-05-16
 draft: false
 description: "Once models become bounded workers, AI applications start to look like familiar distributed systems, and the future of AI engineering looks increasingly like software engineering again."
 tags:

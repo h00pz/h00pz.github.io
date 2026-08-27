@@ -1,6 +1,6 @@
 ---
 title: "Persistent State Beats Agent Memory"
-date: 2026-07-29
+date: 2026-05-05
 draft: false
 description: "Important application knowledge should not depend on what a model happens to remember. Facts, decisions, history, and artifacts belong in queryable stores."
 tags:

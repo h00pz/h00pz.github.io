@@ -1,6 +1,6 @@
 ---
 title: "Your AI Agent Probably Shouldn't Be an Agent"
-date: 2026-06-24
+date: 2026-04-17
 draft: false
 description: "The best AI systems know exactly where inference belongs, and where ordinary software should take over."
 tags:

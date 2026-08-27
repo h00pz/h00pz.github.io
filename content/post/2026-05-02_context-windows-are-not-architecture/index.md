@@ -1,6 +1,6 @@
 ---
 title: "Context Windows Are Not Architecture"
-date: 2026-07-22
+date: 2026-05-02
 draft: false
 description: "A larger context window can hide missing boundaries for a surprisingly long time, but it does not create durable state or clear responsibility."
 tags:

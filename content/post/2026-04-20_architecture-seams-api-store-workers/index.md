@@ -1,6 +1,6 @@
 ---
 title: "Architecture → Seams → API → Store → Workers"
-date: 2026-07-01
+date: 2026-04-20
 draft: false
 description: "A practical construction method for building AI systems from durable architecture down to replaceable model workers."
 tags:

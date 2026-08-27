@@ -1,6 +1,6 @@
 ---
 title: "Small Models, Explicit Boundaries"
-date: 2026-07-15
+date: 2026-04-29
 draft: false
 description: "Small models work best when their responsibilities are narrow, their seams are explicit, and the surrounding system stays deterministic."
 tags:

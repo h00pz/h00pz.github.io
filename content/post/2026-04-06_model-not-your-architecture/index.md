@@ -1,6 +1,6 @@
 ---
 title: "The Model Is Not Your Architecture"
-date: 2026-06-10
+date: 2026-04-06
 draft: false
 description: "Models are replaceable components. The architecture around them is the durable part of an AI application."
 tags:
