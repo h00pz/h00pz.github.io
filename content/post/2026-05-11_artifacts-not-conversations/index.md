@@ -19,7 +19,7 @@ The most natural way to make two agents work together is to let them talk. One a
 
 It also drifts, and it drifts in a way that is almost impossible to see while it is happening. The research agent says a company has "meaningful exposure" to something. The next agent interprets "meaningful" its own way. A third agent, reading a summary of a summary, treats a tentative observation as an established fact. No message was wrong, exactly. Each one was a plausible reading of the last. But by the end of the chain, the system is confidently acting on something nobody actually established, and there's no single place you can point to where the meaning changed.
 
-I've come to think this is the central mistake in a lot of multi-agent design. The agents are collaborating through conversation, and conversation is the wrong medium for anything a system needs to depend on. What agents should exchange isn't messages. It's artifacts.
+I've come to think this is the central mistake in a lot of multi-agent design, and I say that as someone who built it this way first and was rather pleased with how clean the diagram looked. The agents are collaborating through conversation, and conversation is the wrong medium for anything a system needs to depend on. What agents should exchange isn't messages. It's artifacts.
 
 ## The Conversation Trap
 
