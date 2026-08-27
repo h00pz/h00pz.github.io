@@ -29,7 +29,7 @@ The basic agent pattern is incredibly appealing. You give a model a prompt descr
 
 The problems started appearing for me as the applications became larger. PortfolioOS is probably the best example because there isn't really one job called "manage a portfolio." There are a bunch of different jobs hiding underneath it. Something needs to understand the current market environment, something needs to discover companies worth researching, something needs to determine whether the evidence supports an investment thesis, and something needs to understand why each account exists in the first place. After all of that, something still has to turn those conclusions into an actual portfolio.
 
-My first instinct was similar to what I see in a lot of AI projects today: build agents for those jobs and let the agents work together. The problem is that "work together" very quickly becomes an architectural black hole. Does the research agent talk directly to the portfolio agent? Can the portfolio agent ask the market agent to change its opinion? Can the market agent modify portfolio state? What happens when two agents disagree? Which version of the truth gets stored, and who owns the object they are both modifying?
+My first instinct was similar to what I see in a lot of AI projects today: build agents for those jobs and let the agents work together. The problem is that "work together" very quickly becomes an architectural black hole. Does the research agent talk directly to the portfolio agent? Can the portfolio agent ask the market agent to change its opinion? Can the market agent modify portfolio state? What happens when two agents disagree? Which version of the truth gets stored, and who owns the object they're both modifying?
 
 You can answer all of these questions with prompts, but I eventually concluded that I didn't want to. Once I started asking these questions seriously, I realized I wasn't dealing with an AI problem anymore. I was dealing with a distributed systems problem that happened to contain AI.
 
@@ -39,7 +39,7 @@ None of this is an argument against using models. Quite the opposite. The reason
 
 A model can read a collection of earnings reports and determine whether management's story is changing. It can compare competing pieces of evidence, take a messy meeting transcript and figure out what decisions were actually made, or look at several investment theses and identify where their assumptions contradict each other. These are exactly the kinds of problems where inference is valuable because the answer isn't sitting neatly in a database waiting to be retrieved.
 
-The mistake I was making was assuming that because the model was good at reasoning about the problem, it should also control everything surrounding the problem. A model might be very good at determining whether new evidence weakens an investment thesis, but that does not mean the model should also decide where the thesis is stored, modify the portfolio, calculate the new position size, update historical records, and decide which other parts of the application should now run.
+The mistake I was making was assuming that because the model was good at reasoning about the problem, it should also control everything surrounding the problem. A model might be very good at determining whether new evidence weakens an investment thesis, but that doesn't mean the model should also decide where the thesis is stored, modify the portfolio, calculate the new position size, update historical records, and decide which other parts of the application should now run.
 
 Those are completely different jobs, and once I separated them the architecture started getting much easier to understand.
 
@@ -47,9 +47,9 @@ Those are completely different jobs, and once I separated them the architecture 
 
 One of the rules I eventually adopted is simple: **if something can reasonably be deterministic, make it deterministic.** Databases already know how to store things, APIs already know how to expose things, functions already know how to calculate things, and schedulers already know when something should run. We don't need a language model to reinvent any of that.
 
-In PortfolioOS, for example, a model might determine that the evidence supporting an investment thesis has materially changed. That is exactly the kind of fuzzy reasoning problem I want a model working on. Once that conclusion exists, however, everything around it can become much more boring. The result has a defined structure, the system knows where it gets stored, the previous result does not disappear, the time the analysis occurred gets recorded, and other components can react to the changed state using explicit rules.
+In PortfolioOS, for example, a model might determine that the evidence supporting an investment thesis has materially changed. That's exactly the kind of fuzzy reasoning problem I want a model working on. Once that conclusion exists, however, everything around it can become much more boring. The result has a defined structure, the system knows where it gets stored, the previous result doesn't disappear, the time the analysis occurred gets recorded, and other components can react to the changed state using explicit rules.
 
-The model did the thing it was good at and software did the things software is good at. This became one of the most important architectural ideas behind both PortfolioOS and Atlas: the goal isn't to eliminate probabilistic behavior, because the entire reason I am using models is to solve problems that require inference. The goal is to contain that probabilistic behavior so it does not become the operating model for the entire application.
+The model did the thing it was good at and software did the things software is good at. This became one of the most important architectural ideas behind both PortfolioOS and Atlas: the goal isn't to eliminate probabilistic behavior, because the entire reason I'm using models is to solve problems that require inference. The goal is to contain that probabilistic behavior so it doesn't become the operating model for the entire application.
 
 ## Building Seams Instead Of Connections
 
@@ -61,7 +61,7 @@ This sounds like incredibly normal software engineering because it is. The inter
 
 At first this feels like flexibility, but it is also how uncertainty starts leaking throughout the entire application. Explicit seams force me to answer the uncomfortable questions early: what exactly does this component produce, who owns the data, what is allowed to modify it, what assumptions are safe, what happens if the output is incomplete, and what happens if the next component rejects it?
 
-Once those questions have answers, the model has a much smaller job. That is a feature, not a limitation.
+Once those questions have answers, the model has a much smaller job. That's a feature, not a limitation.
 
 ## State Belongs To The System
 
@@ -87,9 +87,9 @@ The application becomes a collection of specialized components instead of one ex
 
 Another thing I learned building these systems is that failure needs to be part of the architecture. Models are going to be wrong, sources are going to be missing, APIs are going to fail, two pieces of evidence are going to disagree, and eventually the system is going to encounter something nobody anticipated.
 
-The answer cannot simply be "hopefully the agent figures it out." Sometimes the correct system behavior is to stop because the evidence is insufficient, a state transition is invalid, a worker is trying to read information outside of its boundary, or the system simply cannot prove that the requested work has been completed safely.
+The answer can't simply be "hopefully the agent figures it out." Sometimes the correct system behavior is to stop because the evidence is insufficient, a state transition is invalid, a worker is trying to read information outside of its boundary, or the system simply can't prove that the requested work has been completed safely.
 
-This became especially important as I started building Loop (the PortfolioOS subsystem responsible for continuously monitoring existing positions and deciding when a position needs to be reconsidered). A system watching real money cannot treat uncertainty as an invitation to improvise. If Loop identifies a possible problem but cannot establish enough evidence to act, I would rather have the system surface the uncertainty than manufacture confidence so the workflow can continue.
+This became especially important as I started building Loop (the PortfolioOS subsystem responsible for continuously monitoring existing positions and deciding when a position needs to be reconsidered). A system watching real money can't treat uncertainty as an invitation to improvise. If Loop identifies a possible problem but can't establish enough evidence to act, I would rather have the system surface the uncertainty than manufacture confidence so the workflow can continue.
 
 The goal isn't to build a model smart enough that failure disappears. The goal is to build a system where failure is visible, contained, and understandable.
 
@@ -99,7 +99,7 @@ After repeatedly encountering these same problems in PortfolioOS and Atlas, I ev
 
 HASF formalizes a lot of the ideas described here: defining architecture before implementation, identifying ownership and seams, separating deterministic services from model inference, making failure states explicit, and establishing what "done" actually means before a model starts producing code.
 
-There is quite a bit more to HASF than I can reasonably cover without turning this into a completely different article, so **HASF is a post for another day**. For this discussion, the important point is that it grew out of the same realization: the quality of an AI application depends at least as much on the architecture surrounding the model as it does on the model itself.
+There's quite a bit more to HASF than I can reasonably cover without turning this into a completely different article, so **HASF is a post for another day**. For this discussion, the important point is that it grew out of the same realization: the quality of an AI application depends at least as much on the architecture surrounding the model as it does on the model itself.
 
 ## Atlas And PortfolioOS
 
@@ -113,7 +113,7 @@ From the outside, both systems can still look highly agentic. PortfolioOS can di
 
 Inside, however, I increasingly want them to look like software. There are contracts, stores, workers, permissions, deterministic services, and explicit transitions between states. Most importantly, there are places where models are allowed to reason and places where they aren't.
 
-That is the distinction I had been missing.
+That's the distinction I had been missing.
 
 ## Final Words
 
@@ -121,8 +121,8 @@ I started down this path trying to build better agents, but what I actually need
 
 I just don't think that prototype is necessarily the architecture.
 
-As Atlas and PortfolioOS have grown, I have found myself giving models less freedom rather than more. Their individual jobs are getting smaller while the systems around them are getting more capable, and oddly enough the applications feel more intelligent because of it. The model doesn't need to understand the entire system; it needs to understand the problem directly in front of it, while the system takes care of everything surrounding that problem.
+As Atlas and PortfolioOS have grown, I've found myself giving models less freedom rather than more. Their individual jobs are getting smaller while the systems around them are getting more capable, and oddly enough the applications feel more intelligent because of it. The model doesn't need to understand the entire system; it needs to understand the problem directly in front of it, while the system takes care of everything surrounding that problem.
 
-That is the idea behind HASF, and increasingly the rule I use whenever I start designing an AI application:
+That's the idea behind HASF, and increasingly the rule I use whenever I start designing an AI application:
 
 **Stop building agents. Start building systems.**

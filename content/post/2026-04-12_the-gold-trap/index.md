@@ -46,15 +46,15 @@ A normal extraction system sees a pile of evidence pointing in the same directio
 
 **Gold → bullish → positive historical returns → preferred exposure → long thesis.**
 
-That representation is not fabricated. Every part of it can be traced back to the document.
+That representation isn't fabricated. Every part of it can be traced back to the document.
 
-It is also not what the document means.
+It's also not what the document means.
 
-The March 21 update is not another fact to add to the pile. It changes the state of the pile.
+The March 21 update isn't another fact to add to the pile. It changes the state of the pile.
 
 ## Why the Gold Trade Was a Trap
 
-There was already nuance inside the original gold recommendation before the update appeared. Gold was around the 95.4th percentile, the author already owned it, and he had not been adding aggressively at those levels. The tactical guidance was closer to retaining exposure and adding on weakness than chasing the move.
+There was already nuance inside the original gold recommendation before the update appeared. Gold was around the 95.4th percentile, the author already owned it, and he hadn't been adding aggressively at those levels. The tactical guidance was closer to retaining exposure and adding on weakness than chasing the move.
 
 Energy was described as the cleaner long.
 
@@ -64,13 +64,13 @@ That means the document contained at least three separate ideas that a useful mo
 | --- | --- |
 | Structural thesis | Gold remained attractive |
 | Existing positioning | Gold exposure was already owned |
-| Tactical entry | Do not chase; add selectively on weakness |
+| Tactical entry | Don't chase; add selectively on weakness |
 
-Flatten those into a single `bullish_gold` fact, and an important distinction disappears. A bullish asset thesis is not necessarily a bullish entry decision.
+Flatten those into a single `bullish_gold` fact, and an important distinction disappears. A bullish asset thesis isn't necessarily a bullish entry decision.
 
 Then came the March 21 update.
 
-The author explicitly said that gold's tactical setup had **shifted materially since the letter was published**, and that an updated view would appear elsewhere. The new tactical view was not contained in the document we were processing.
+The author explicitly said that gold's tactical setup had **shifted materially since the letter was published**, and that an updated view would appear elsewhere. The new tactical view wasn't contained in the document we were processing.
 
 That creates a fourth state:
 
@@ -83,17 +83,17 @@ That creates a fourth state:
 
 The correct answer was therefore not **buy gold**.
 
-It was not even **add gold on weakness**.
+It wasn't even **add gold on weakness**.
 
-The defensible answer was that the historical document contained a bullish structural gold thesis, but its tactical recommendation had subsequently been superseded. Without the promised update, the system did not possess enough evidence to make a current tactical recommendation.
+The defensible answer was that the historical document contained a bullish structural gold thesis, but its tactical recommendation had subsequently been superseded. Without the promised update, the system didn't possess enough evidence to make a current tactical recommendation.
 
-That is a much harder conclusion for a model to reach because the answer requires it to deliberately discard useful-looking information.
+That's a much harder conclusion for a model to reach because the answer requires it to deliberately discard useful-looking information.
 
 ## The Hardest Errors Are Made of Correct Facts
 
 This is the part that changed how I think about Small Language Model (SLM) selection.
 
-The dangerous failure was not hallucination. Qwen did not invent a gold price, fabricate a quote, or attribute a position to someone who never held it.
+The dangerous failure wasn't hallucination. Qwen didn't invent a gold price, fabricate a quote, or attribute a position to someone who never held it.
 
 It extracted real information from the source.
 
@@ -117,7 +117,7 @@ The error exists in the relationship between them.
 
 The `action` is no longer authorized by the evidence because a later statement superseded the earlier tactical guidance.
 
-That is not an extraction problem. It is an interpretation problem.
+That isn't an extraction problem. It's an interpretation problem.
 
 ## Qwen Wasn't Bad at the Job
 
@@ -125,7 +125,7 @@ It would be easy to turn this into a story about Qwen being a bad model. That wo
 
 Qwen was actually very good at many of the things I needed.
 
-It could process large contexts efficiently, identify enormous numbers of candidate facts, build chronologies, extract entities, find directives, construct evidence maps, and turn messy source material into structured context. Its larger usable context window was particularly attractive for PortfolioOS because some of the inputs are not tidy research reports. They are giant conversations, accumulated decisions, historical analysis, and evolving system state.
+It could process large contexts efficiently, identify enormous numbers of candidate facts, build chronologies, extract entities, find directives, construct evidence maps, and turn messy source material into structured context. Its larger usable context window was particularly attractive for PortfolioOS because some of the inputs aren't tidy research reports. They are giant conversations, accumulated decisions, historical analysis, and evolving system state.
 
 Those are valuable capabilities.
 
@@ -139,13 +139,13 @@ It was less reliable at answering:
 
 **Which of these statements still governs?**
 
-Those sound like variations of the same question. In a real system, they are completely different jobs.
+Those sound like variations of the same question. In a real system, they're completely different jobs.
 
 ## Why Gemma Changed the Model Selection
 
 Testing the Gemma family changed the architecture because Gemma was substantially better at the kind of relationship the Gold Trap required.
 
-The important behavior was not that Gemma knew more about gold. There was no hidden commodity expertise required to solve the test. Everything necessary to reach the correct conclusion existed inside the supplied context.
+The important behavior wasn't that Gemma knew more about gold. There was no hidden commodity expertise required to solve the test. Everything necessary to reach the correct conclusion existed inside the supplied context.
 
 Gemma was better at preserving the semantic relationship between the statements:
 
@@ -155,15 +155,15 @@ Gemma was better at preserving the semantic relationship between the statements:
 
 **A later statement says the setup changed materially.**
 
-**Therefore, the original recommendation cannot safely be promoted as current truth.**
+**Therefore, the original recommendation can't safely be promoted as current truth.**
 
-That is nuance detection.
+That's nuance detection.
 
 It ultimately pushed PortfolioOS toward a division of labor rather than a winner-take-all model decision. A smaller Gemma model could handle context compilation where semantic relationships mattered, while a larger Gemma model could remain responsible for deeper adjudication and judgment. Qwen still had places where its extraction ability, structure, and context capacity were useful, but those capabilities no longer automatically qualified it for every task upstream of reasoning.
 
 The benchmark had changed the question from **which small model is best?** to **which small model is best at this job?**
 
-That is a much more useful question.
+That's a much more useful question.
 
 ## Nuance Is a Model Capability
 
@@ -171,21 +171,21 @@ We talk constantly about reasoning models, context windows, parameter counts, qu
 
 Nuance is harder.
 
-Nuance is understanding that two individually true statements can produce a false conclusion when their temporal relationship is ignored. It is recognizing that a warning modifies the authority of a recommendation rather than merely adding another bullet to its summary. It is distinguishing a structural thesis from a tactical entry, an existing position from a recommendation to increase it, and historical evidence from current guidance.
+Nuance is understanding that two individually true statements can produce a false conclusion when their temporal relationship is ignored. It's recognizing that a warning modifies the authority of a recommendation rather than merely adding another bullet to its summary. It's distinguishing a structural thesis from a tactical entry, an existing position from a recommendation to increase it, and historical evidence from current guidance.
 
-It is also understanding words such as **but**, **unless**, **previously**, **however**, **superseded**, **no longer**, **subject to**, and **as of**.
+It's also understanding words such as **but**, **unless**, **previously**, **however**, **superseded**, **no longer**, **subject to**, and **as of**.
 
 Those words look cheap in a tokenizer. Architecturally, they can be some of the most expensive tokens in the entire document.
 
 The phrase *shifted materially since this letter was published* carried more decision value than pages of historical gold analysis because it changed whether that analysis could still authorize an action.
 
-A model that captures twenty supporting facts but misses that relationship has not produced twenty useful facts. It has produced a very convincing trap.
+A model that captures twenty supporting facts but misses that relationship hasn't produced twenty useful facts. It has produced a very convincing trap.
 
 ## Benchmark the Failure You Actually Care About
 
-This is why I have become skeptical of selecting small models primarily through public benchmarks.
+This is why I've become skeptical of selecting small models primarily through public benchmarks.
 
-A benchmark can tell me that a model is strong at math, coding, retrieval, instruction following, or some generalized reasoning task. Those results are useful when narrowing the field, but they cannot tell me whether a model is safe for a particular architectural responsibility.
+A benchmark can tell me that a model is strong at math, coding, retrieval, instruction following, or some generalized reasoning task. Those results are useful when narrowing the field, but they can't tell me whether a model is safe for a particular architectural responsibility.
 
 For that, I need adversarial examples taken from the actual system.
 
@@ -193,7 +193,7 @@ The Gold Trap became one of those examples.
 
 A useful model-selection test for PortfolioOS should contain things such as a recommendation that is later superseded, a bullish thesis paired with an unattractive entry, conflicting statements from different dates, an authoritative source discussing the wrong metric, a historical observation that looks like a current directive, or a conclusion whose supporting evidence is individually correct but semantically incompatible.
 
-Then I do not ask whether the model produced a good summary.
+Then I don't ask whether the model produced a good summary.
 
 I ask whether it stepped on the land mine.
 
@@ -203,11 +203,11 @@ Those become regression tests for models.
 
 If a new 8 billion parameter model is faster, cheaper, and has twice the context window, great. Run the traps.
 
-If it cannot tell me that the gold recommendation has been superseded, I already know something more important than its benchmark score.
+If it can't tell me that the gold recommendation has been superseded, I already know something more important than its benchmark score.
 
 ## Small Models Need Jobs
 
-There is a temptation when designing systems around small models to treat them as interchangeable compute.
+There's a temptation when designing systems around small models to treat them as interchangeable compute.
 
 Put the cheap model here. Put the smart model there. Use the big-context model for ingestion. Send the difficult questions to the larger model.
 
@@ -217,14 +217,14 @@ A model has a job.
 
 One model may be excellent at mechanical extraction. Another may be unusually good at preserving chronology. Another may detect contradictions well. Another may be better at deciding whether an apparent contradiction is actually a supersession event. A larger model may be reserved for the places where evidence has to become judgment.
 
-The architecture should exploit those differences rather than pretending they do not exist.
+The architecture should exploit those differences rather than pretending they don't exist.
 
-This also means model selection cannot end when the system ships. Models will change. New versions will appear, context windows will expand, inference will get cheaper, and whatever model looks impressive today will eventually become replaceable.
+This also means model selection can't end when the system ships. Models will change. New versions will appear, context windows will expand, inference will get cheaper, and whatever model looks impressive today will eventually become replaceable.
 
 The traps should survive.
 
-When I evaluate the next small model for PortfolioOS, I do not need it to be Qwen, Gemma, or whatever replaces both of them.
+When I evaluate the next small model for PortfolioOS, I don't need it to be Qwen, Gemma, or whatever replaces both of them.
 
 I need it to understand the gold.
 
-That is the durable requirement.
+That's the durable requirement.
