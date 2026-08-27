@@ -9,7 +9,7 @@ tags:
   - small-language-models
   - software-architecture
 categories:
-  - architecture
+  - Small Model Systems
 image: cover.png
 ---
 

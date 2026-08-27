@@ -10,7 +10,7 @@ tags:
   - context
   - retrieval
 categories:
-  - architecture
+  - Small Model Systems
 image: cover.png
 ---
 

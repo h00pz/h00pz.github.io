@@ -10,7 +10,7 @@ tags:
   - agents
   - systems
 categories:
-  - architecture
+  - Small Model Systems
 image: cover.png
 ---
 

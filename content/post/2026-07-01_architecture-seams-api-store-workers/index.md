@@ -10,7 +10,7 @@ tags:
   - small-language-models
   - agents
 categories:
-  - architecture
+  - Small Model Systems
 image: cover.png
 ---
 

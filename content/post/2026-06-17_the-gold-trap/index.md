@@ -10,7 +10,7 @@ tags:
   - gemma
   - qwen
 categories:
-  - architecture
+  - Small Model Systems
 image: cover.png
 ---
 
