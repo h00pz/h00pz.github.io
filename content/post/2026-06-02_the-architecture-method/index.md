@@ -61,6 +61,44 @@ The success case, the same week, went the opposite way. Before the collection su
 
 The rule that came out of it is short and unforgiving. If you can't state a subsystem's boundary in one sentence, and defend it against the hardest counter-example you can think of, you aren't ready to open the file.
 
+## What a Finished Lane Document Looks Like
+
+All of that arguing produces a specific kind of document, and once you have written a few they all have the same bones. Here is a trimmed piece of a real one, the collection lane, so the shape is visible rather than described:
+
+```text
+# Subsystem Architecture — pos-collection
+
+The lane that gathers. It measures and preserves what the system has said it
+depends on, and it says loudly when it cannot.
+
+> This document describes the DESIRED END STATE, never the current one.
+
+## Doctrines (the rule, and why it exists)
+| doctrine                                | why it exists                                          |
+|-----------------------------------------|--------------------------------------------------------|
+| Collection owns the only egress         | one hardened boundary is worth more than two           |
+| An absence is an observation            | otherwise checked and never-checked are one record     |
+| Cite or reject                          | an ungrounded answer that looks grounded is worse than none |
+| Preserve before interpreting            | a conclusion whose source has changed can't be examined|
+| Store what was known when it was known  | revisions make a naive backtest lie                    |
+
+## Degradation (what happens when each dependency is gone)
+| absent            | collection behaviour                                        |
+|-------------------|-------------------------------------------------------------|
+| a source          | it goes stale against its contract and says so. No          |
+|                   | substitute is ever silently used.                           |
+| the ibeam gateway | price and FX gathering stops. There is no second source.    |
+| model-serving     | agentic gathering and classification queue. Everything      |
+|                   | deterministic is unaffected.                                |
+
+The rule is uniform, and it comes from one failure: a missing record announces
+itself and a stale one does not.
+```
+
+Two things in there do most of the work. Every doctrine carries its reason in the next column, which is the whole point, because a rule you can see the reason for is a rule you can argue with instead of one you either worship or delete. And the degradation table isn't decoration; the act of filling it in is what forces you to admit which dependencies you actually have, and three times that week a row I couldn't fill was a seam I had forgotten to declare.
+
+That's a trimmed piece, cut down to fit here. The complete document, all fifteen sections of it, is reproduced as a companion page, so you can see what a finished one actually weighs and how much of it turns out to be doctrine with its reason attached: [Subsystem Architecture: pos-collection](/pos-collection-architecture/).
+
 ## Read Everything, Then Cross-Read
 
 After I stopped the work, my instruction was explicit: read the finished architecture documents, their seams, and the API and persistence contracts, and only then write. That read ran to around eight thousand lines across twenty-one documents. It sounds disproportionate, and it wasn't.
