@@ -19,6 +19,8 @@ The problem came when I started asking what happened **after** the answer. If th
 
 The easiest answer to every one of these questions was to give the agent another tool and another instruction. That worked for a while, but eventually I had something that could read almost everything, reason about almost everything, call almost everything, and decide what should happen next. In other words, I had accidentally built a giant application where the central integration layer was a language model.
 
+I can point at the day it stopped being abstract. That system was PortfolioOS v2, and when I finally asked it what it believed, the reasoning had run fine, real findings were filed, and the field that was supposed to say whether any position was being watched against its thesis read `null` on every one of them. The intelligence worked and nothing heard it. I eventually [threw the whole thing away](/p/why-we-threw-away-portfolioos-v2/), and this first series is the set of rules I wrote so I wouldn't build it a second time.
+
 That was the point where I stopped asking how to build a better agent and started asking a different question: **what if the agent is the wrong abstraction?**
 
 This post covers where that question led me while building PortfolioOS, Atlas, and eventually the **h00pz Architecture Specification Framework (HASF)**.

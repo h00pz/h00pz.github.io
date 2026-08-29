@@ -22,6 +22,8 @@ Three other parts of the system broke.
 
 One had quietly assumed that the field would always exist. Another had copied the original schema into its own code, and a third had begun depending on a piece of metadata that was never supposed to be part of the interface at all. None of those dependencies existed on the architecture diagram, but they were every bit as real as the boxes we had carefully drawn.
 
+This isn't a parable. In pOS a change to where one worker mounted its endpoint once broke its consumers in exactly this shape, because the path everyone reached for had never been written down as a contract, only assumed, and the assumption held right up until the day it moved. The break was invisible on any diagram, because the diagram drew the boxes and the bug lived in a line nobody had drawn between them.
+
 That was the point where the diagram stopped being useful. The boxes weren't the architecture because the architecture actually lived in the agreements hidden inside the arrows connecting them.
 
 That lesson has become increasingly important while building AI systems. The most valuable artifact is rarely the model, the worker, the database, or even the API itself. The durable part of the architecture is the seam between those components because the seam defines what each side is allowed to know about the other.
@@ -220,6 +222,8 @@ The architecture provides context, the seam provides constraint, and the worker 
 Once the seam becomes a first class architectural object, testing changes with it. You stop testing only whether Worker A successfully talks to Worker B because that kind of integration test can accidentally preserve implementation dependencies that should never have existed.
 
 Instead, you test whether Worker A satisfies Contract X, then separately test whether Worker B correctly consumes Contract X. That distinction seems minor until you replace Worker A and discover that the replacement can be validated against the same contract without needing to recreate every internal assumption of the original worker.
+
+This has a name in ordinary service design, <a href="https://martinfowler.com/articles/consumerDrivenContracts.html" target="_blank" rel="noopener">consumer-driven contract testing</a>, and tools like Pact exist to do exactly it between services that never share a process. Putting a model on one side of the seam doesn't change the technique. It only raises the stakes, because the thing you're holding to the contract is less predictable than an ordinary service and needs the boundary more, not less.
 
 This also creates much better failure testing. You can test what the consumer does when a required field is absent, when a producer returns an unknown enumeration, when confidence falls below a threshold, or when evidence references can't be resolved.
 

@@ -40,7 +40,7 @@ Those are useful tests, but they mostly measure whether a model can see what is 
 
 The Gold Trap was testing something different. It was asking whether the model understood the relationship between two pieces of information.
 
-The report contained a strongly bullish section titled **Gold Confidence Restored**. The historical analysis showed median gold returns of roughly 9.6 percent over six months and 8.5 percent over twelve months following comparable conditions. The author discussed existing exposure, preferred instruments such as GLD and gold futures, and presented an entirely coherent structural case for gold.
+The report contained a strongly bullish section titled **Gold Confidence Restored**. The historical analysis showed solidly positive median gold returns over the following six and twelve months in comparable conditions. The author discussed existing exposure, the preferred instruments for the trade, and presented an entirely coherent structural case for gold.
 
 A normal extraction system sees a pile of evidence pointing in the same direction:
 
@@ -54,7 +54,7 @@ The March 21 update isn't another fact to add to the pile. It changes the state 
 
 ## Why the Gold Trade Was a Trap
 
-There was already nuance inside the original gold recommendation before the update appeared. Gold was around the 95.4th percentile, the author already owned it, and he hadn't been adding aggressively at those levels. The tactical guidance was closer to retaining exposure and adding on weakness than chasing the move.
+There was already nuance inside the original gold recommendation before the update appeared. Gold was trading near the top of its historical range, the author already owned it, and he hadn't been adding aggressively at those levels. The tactical guidance was closer to retaining exposure and adding on weakness than chasing the move.
 
 Energy was described as the cleaner long.
 
@@ -106,7 +106,7 @@ But what validator catches this?
 ```text
 thesis: bullish
 asset: gold
-instrument: GLD
+instrument: gold-etf
 evidence: positive historical returns
 action: long
 ```

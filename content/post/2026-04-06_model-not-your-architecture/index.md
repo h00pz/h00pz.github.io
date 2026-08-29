@@ -19,6 +19,8 @@ Then someone asked the question that seems to eventually dominate every AI archi
 
 These are useful questions, but they aren't architecture questions. The model is one component inside the architecture, and if replacing the model requires redesigning the application, then the model was never really a component. It was the architecture, and that is usually a mistake.
 
+I got to test this claim for real. When [the Gold Trap](/p/the-gold-trap-small-models-are-not-interchangeable/) forced pOS to move its document work from one small model to another, the swap was a configuration change rather than a redesign, precisely because the boundary around that model was explicit and the rest of the system didn't know or care which model sat behind it. That's the actual test of whether a model is a component or the architecture: when you replace it, does anything else have to move?
+
 ## The Model Trap
 
 AI development has an unusual tendency to start from the most volatile part of the technology stack. A team gets access to a model, immediately asks what it can build around it, and then lets the application grow outward from that model.

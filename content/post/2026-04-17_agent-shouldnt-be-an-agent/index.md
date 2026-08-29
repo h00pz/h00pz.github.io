@@ -19,6 +19,8 @@ There was only one problem: almost none of the work required intelligence. The r
 
 We had taken a deterministic program and replaced a collection of perfectly ordinary functions with a language model repeatedly asking itself what to do next. That's becoming one of the stranger habits in AI application design.
 
+The clearest counterexample I have is the collection worker in pOS. Its whole job is to take a demand for a piece of data, resolve it to a source, fetch it, and record the result, and it has no model in it at all, on purpose, because not one step of that job needs one. Every branch is known ahead of time. Putting inference in there wouldn't have made it smarter. It would have made a predictable function into a slot machine, which is exactly the trade this post is arguing against.
+
 We have spent decades learning how to make software predictable, testable, observable, and recoverable. Then large language models arrived, and suddenly we started handing deterministic responsibilities to probabilistic systems because the word *agent* sounded more sophisticated than *workflow*. The interesting question isn't whether an AI model can perform a task. The interesting question is whether inference is actually required.
 
 ## The Agent Reflex

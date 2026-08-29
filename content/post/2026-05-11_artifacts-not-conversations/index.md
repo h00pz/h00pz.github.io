@@ -81,6 +81,8 @@ I've watched the conversational version fail from the inside, in the system I us
 
 That's the same lesson at a different altitude. Whether the agents are writing code or researching investments, collaboration through a shared, unstructured, mutable medium drifts and collides. Collaboration through owned, typed, durable artifacts doesn't. The medium is the architecture.
 
+It's worth being honest that the two cases aren't identical, because the difference actually strengthens the point. My coding agents work inside version control, with real merge semantics and a human reading the diff at the end, and the inference workers in pOS have none of that. The coding-agent case is the easy one, the version with a reviewer positioned to catch the drift, and it still drifts. The pOS version has no reviewer standing at the end, so the artifact discipline isn't a nicety there. It's the only thing between the workers and the collisions.
+
 ## Artifacts, Not Conversations
 
 So when I design a multi-agent system now, I don't ask how the agents will talk to each other. I ask what each agent produces, who owns it, what shape it has, and who is allowed to consume it. The answers to those questions are the real architecture. The messages the models exchange along the way are just how they get there.
