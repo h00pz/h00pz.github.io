@@ -3,7 +3,7 @@ title: "\"Done\" Is an Architectural Property"
 slug: done-is-an-architectural-property
 date: 2026-07-06
 draft: false
-description: "A feature that produces the right result once is not necessarily finished, especially when inference is involved. Done means deterministic, observable, repeatable, honest, safe, and narrow, and each of those is a decision you make in the architecture, not a feeling you get from a demo."
+description: "A feature that works once isn't finished, especially with inference. Done means deterministic, observable, repeatable, honest, safe, and narrow, by design."
 tags:
   - ai
   - architecture

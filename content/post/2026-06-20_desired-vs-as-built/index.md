@@ -3,7 +3,7 @@ title: "Desired Architecture vs. As-Built Reality"
 slug: desired-vs-as-built
 date: 2026-06-20
 draft: false
-description: "Architecture diagrams describe intent; running systems accumulate difference. Keeping the desired end state and the as-built reality in separate documents is what lets you trust either one."
+description: "Diagrams describe intent; running systems accumulate difference. Keep the desired end state and the as-built reality in separate documents to trust either one."
 tags:
   - ai
   - architecture

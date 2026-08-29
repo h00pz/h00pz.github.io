@@ -3,7 +3,7 @@ title: "Spec → Plan → Code: Slowing AI Down to Make It Faster"
 slug: spec-plan-code
 date: 2026-06-30
 draft: false
-description: "Coding agents are extremely good at producing implementation before anyone has agreed what to build. Forcing work through specification, planning, and only then code makes the architectural decisions explicit up front and cuts the rework that eats the time you thought you saved."
+description: "Coding agents write implementation before anyone agrees what to build. Forcing spec, then plan, then code makes decisions explicit and cuts costly rework."
 tags:
   - ai
   - architecture

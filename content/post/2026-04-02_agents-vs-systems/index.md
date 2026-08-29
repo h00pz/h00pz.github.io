@@ -2,7 +2,7 @@
 title: "Stop Building Agents. Start Building Systems."
 date: 2026-04-02
 draft: false
-description: "Why reliable AI applications are built by bounding model inference inside explicit architecture, persistent state, deterministic services, and clear seams instead of handing everything to one autonomous agent."
+description: "Reliable AI apps bound model inference inside explicit architecture, persistent state, and clear seams, instead of handing everything to one autonomous agent."
 tags:
   - ai
   - architecture

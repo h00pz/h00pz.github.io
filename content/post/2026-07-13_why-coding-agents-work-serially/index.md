@@ -3,7 +3,7 @@ title: "Why My Coding Agents Work Serially"
 slug: why-coding-agents-work-serially
 date: 2026-07-13
 draft: false
-description: "Parallel implementation sounds faster until several agents independently change assumptions underneath one another. Serial execution can beat parallelism while the architecture is still evolving, and deliberate sequencing makes AI-generated work far easier to review and trust."
+description: "Parallel agents change each other's assumptions underneath. While the architecture still moves, serial execution beats parallelism and is easier to trust."
 tags:
   - ai
   - architecture

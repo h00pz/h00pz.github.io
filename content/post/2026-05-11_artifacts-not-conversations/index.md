@@ -3,7 +3,7 @@ title: "Artifacts, Not Conversations: How Agents Should Collaborate"
 slug: artifacts-not-conversations
 date: 2026-05-11
 draft: false
-description: "Multi-agent systems drift when agents pass natural-language conversations back and forth. They should collaborate through typed artifacts with defined producers, consumers, schemas, and ownership."
+description: "Multi-agent systems drift when agents pass conversations back and forth. They should collaborate through typed artifacts with schemas and clear ownership."
 tags:
   - ai
   - architecture

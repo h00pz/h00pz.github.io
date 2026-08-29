@@ -3,7 +3,7 @@ title: "The Architecture Method: Argue First, Write Second"
 slug: the-architecture-method
 date: 2026-06-02
 draft: false
-description: "HASF is the rules for specifying a system first. This is what following them actually felt like: a week of building a subsystem, including every way I got it wrong."
+description: "HASF is the rules for specifying a system first. This is what following them felt like: a week building a subsystem, including every way I got it wrong."
 tags:
   - ai
   - architecture

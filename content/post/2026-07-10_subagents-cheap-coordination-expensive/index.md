@@ -3,7 +3,7 @@ title: "Subagents Are Cheap. Coordination Is Expensive."
 slug: subagents-cheap-coordination-expensive
 date: 2026-07-10
 draft: false
-description: "Modern coding systems make it trivial to launch several agents at a problem, but every additional worker adds assumptions, dependencies, and synchronization cost. The bottleneck was never generating more work in parallel. It's clear ownership, artifacts, sequencing, and authoritative state."
+description: "Launching several agents is trivial, but each adds assumptions and sync cost. The bottleneck was never parallelism; it's ownership, sequencing, and state."
 tags:
   - ai
   - architecture

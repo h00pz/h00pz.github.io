@@ -3,7 +3,7 @@ title: "The Failure Manifest Log"
 slug: the-failure-manifest-log
 date: 2026-06-15
 draft: false
-description: "Most projects fix a failure and move on, which loses the reason a rule exists. The Failure Manifest Log keeps every constraint attached to the observed failure that created it."
+description: "Most projects fix a failure and move on, losing the reason a rule exists. The Failure Manifest Log keeps every constraint tied to the failure that created it."
 tags:
   - ai
   - architecture

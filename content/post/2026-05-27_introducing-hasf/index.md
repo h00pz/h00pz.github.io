@@ -3,7 +3,7 @@ title: "Introducing HASF: Specifying a System Before You Build It"
 slug: introducing-hasf
 date: 2026-05-27
 draft: false
-description: "The h00pz Architecture Specification Framework is a way of deciding a system's boundaries, ownership, and failure states on purpose, before features accumulate into an accidental architecture."
+description: "The h00pz Architecture Specification Framework decides a system's boundaries, ownership, and failure states on purpose, before an accidental architecture forms."
 tags:
   - ai
   - architecture

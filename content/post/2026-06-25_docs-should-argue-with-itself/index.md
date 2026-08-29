@@ -3,7 +3,7 @@ title: "Architecture Documentation Should Argue With Itself"
 slug: docs-should-argue-with-itself
 date: 2026-06-25
 draft: false
-description: "An architecture document and the seams derived from it are in a race: change the architecture, miss a seam, and the next reader believes whichever they open first. Cross-reading, examining adjacent specs to find where they disagree, is how you catch it before production does."
+description: "An architecture doc and its derived seams drift apart. Cross-reading, checking adjacent specs for disagreements, catches it before production does."
 tags:
   - ai
   - architecture
