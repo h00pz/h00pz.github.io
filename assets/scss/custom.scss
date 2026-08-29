@@ -1,3 +1,33 @@
 /*
     You can add your own custom styles here.
 */
+
+/*
+    In-content link visibility.
+    The Stack theme leaves prose links unstyled inside .article-content
+    (only word-break is set), so links are indistinguishable from body
+    text. Give them a theme-aware color plus an underline. Header anchors
+    (the "#" on headings) keep their own styling.
+*/
+:root {
+    --link-color: #1a56db;
+}
+
+:root[data-scheme="dark"] {
+    --link-color: #7ab7ff;
+}
+
+.article-content {
+    a:not(.header-anchor) {
+        color: var(--link-color);
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+        text-decoration-thickness: 1px;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.75;
+            text-decoration: none;
+        }
+    }
+}
