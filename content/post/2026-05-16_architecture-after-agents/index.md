@@ -37,6 +37,8 @@ pOS uses a claim substrate for exactly this. Records get emitted onto a queue, w
 
 ## The Dual-Write Problem Does Not Care That You Are Doing AI
 
+This isn't only my read of it. The academic version of the same claim is Berkeley's <a href="https://aihub.org/2024/03/15/the-shift-from-models-to-compound-ai-systems/" target="_blank" rel="noopener">shift from models to compound AI systems</a>, which argues that state-of-the-art results increasingly come from systems of components rather than monolithic models, and that scaling often returns less per dollar than building the system around the model does.
+
 If you want proof that AI applications are just distributed systems wearing a new hat, watch the classic distributed-systems bugs reappear, unchanged.
 
 In pOS there's a spot where registering a demand means writing to two places: a store that records the demand, and a queue that dispatches it. Write the record, then emit to the queue. If the emit fails after the write succeeds, you get a torn state, a demand that is registered but not dispatched. This is the dual-write problem, named and solved in the distributed-systems literature long before any of this was about AI; the standard answer is the <a href="https://microservices.io/patterns/data/transactional-outbox.html" target="_blank" rel="noopener">transactional outbox</a>. It is exactly as old and exactly as unavoidable as it has ever been. No amount of model capability makes it go away, because it has nothing to do with the model.

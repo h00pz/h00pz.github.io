@@ -82,7 +82,7 @@ None of this is an argument that remembering is bad. It's an argument about wher
 
 Memory-as-transcript grows without bound, so it is under permanent pressure to forget the oldest and often most important material. It has no schema, so nothing else can query it and no invariant can be enforced against it. It has no provenance, so a remembered fact can't be traced to its source. It isn't reproducible, because reconstructing a past belief means reconstructing a past prompt. And it dies with the session, taking the application's knowledge with it.
 
-Every one of those is solved by moving the knowledge into state. A store is bounded by its schema, queryable by design, able to carry provenance and timestamps, replayable through time, and durable across every model the application will ever use. The framework question worth asking isn't how good the agent's memory is. It's how little the application depends on that memory at all.
+Every one of those is solved by moving the knowledge into state. A store is bounded by its schema, queryable by design, able to carry provenance and timestamps, replayable through time, and durable across every model the application will ever use. The framework question worth asking isn't how good the agent's memory is. It's how little the application depends on that memory at all. The broader field has been converging on the same instinct under the name <a href="https://www.langchain.com/blog/context-engineering-for-agents" target="_blank" rel="noopener">context engineering</a>, whose central move is offloading state out of the model's context into an external store the model reads from, rather than trusting the context window to remember.
 
 ## Persistent State Beats Agent Memory
 

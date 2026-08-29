@@ -21,6 +21,8 @@ These are useful questions, but they aren't architecture questions. The model is
 
 I got to test this claim for real. When [the Gold Trap](/p/the-gold-trap-small-models-are-not-interchangeable/) forced pOS to move its document work from one small model to another, the swap was a configuration change rather than a redesign, precisely because the boundary around that model was explicit and the rest of the system didn't know or care which model sat behind it. That's the actual test of whether a model is a component or the architecture: when you replace it, does anything else have to move?
 
+There's a serious objection to all of this that I don't want to dodge: that the durable architecture I'm describing is itself just scaffolding for today's models, and the next model will absorb it the way bigger context windows absorbed a lot of retrieval code. I think that's half right, and the half it gets wrong is the whole point, so I take it on directly in a later post.
+
 ## The Model Trap
 
 AI development has an unusual tendency to start from the most volatile part of the technology stack. A team gets access to a model, immediately asks what it can build around it, and then lets the application grow outward from that model.
