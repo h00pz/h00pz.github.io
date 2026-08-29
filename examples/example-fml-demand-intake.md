@@ -1,10 +1,7 @@
----
-title: "Example FML: The demand seam (FML-102)"
-slug: example-fml-demand-intake
-description: "A complete, real Feature Memory Ledger entry from PortfolioOS, reproduced as the worked example for The Failure Manifest Log."
----
+# Example FML: The demand seam (FML-102)
 
-This is a complete, real FML entry from PortfolioOS, reproduced exactly as it's written in the repository. It's the worked example for the post [The Failure Manifest Log](/p/the-failure-manifest-log/). Notice the shape the whole post is about: the entry opens with the operator need it answers, the deployed axis is kept honest, and the decision history at the bottom records the exact moment it went from built to proven-live against the running cluster. Cross-references to other ledger entries are left as plain identifiers, because those pages aren't published here.
+
+This is a complete, real FML entry from PortfolioOS, reproduced exactly as it's written in the repository. It's the worked example for the post [The Failure Manifest Log](https://h00pz.github.io/p/the-failure-manifest-log/). Notice the shape the whole post is about: the entry opens with the operator need it answers, the deployed axis is kept honest, and the decision history at the bottom records the exact moment it went from built to proven-live against the running cluster. Cross-references to other ledger entries are left as plain identifiers, because those pages aren't published here.
 
 ---
 

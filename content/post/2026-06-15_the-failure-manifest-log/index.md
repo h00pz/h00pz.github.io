@@ -69,7 +69,7 @@ Altitude: feature  ·  Owner: operator
 
 The title is a claim about what the thing is for, the operator need is the specific hole it fills, and the acceptance evidence is what has to be true against the running system before it's allowed to call itself live. An agent that picks up this page a year from now doesn't have to guess why the demand seam exists. The page tells it, in the same breath as it tells it what to build.
 
-That excerpt is just the top of the page. The whole thing, with its dependency edges and the decision history that records the exact moment this item went from built to proven-live on the running cluster, is reproduced here: [Example FML: the demand seam](/example-fml-demand-intake/).
+That excerpt is just the top of the page. The whole thing, with its dependency edges and the decision history that records the exact moment this item went from built to proven-live on the running cluster, lives as a plain file in this site's repo: <a href="https://github.com/h00pz/h00pz.github.io/blob/main/examples/example-fml-demand-intake.md" target="_blank" rel="noopener">Example FML: the demand seam</a>.
 
 That's the whole idea in one sentence. The failure and the fix live in the same record, permanently attached, so the reason can never quietly detach from the rule.
 

@@ -97,7 +97,7 @@ itself and a stale one does not.
 
 Two things in there do most of the work. Every doctrine carries its reason in the next column, which is the whole point, because a rule you can see the reason for is a rule you can argue with instead of one you either worship or delete. And the degradation table isn't decoration; the act of filling it in is what forces you to admit which dependencies you actually have, and three times that week a row I couldn't fill was a seam I had forgotten to declare.
 
-That's a trimmed piece, cut down to fit here. The complete document, all fifteen sections of it, is reproduced as a companion page, so you can see what a finished one actually weighs and how much of it turns out to be doctrine with its reason attached: [Subsystem Architecture: pos-collection](/pos-collection-architecture/).
+That's a trimmed piece, cut down to fit here. The complete document, all fifteen sections of it, lives as a plain file in this site's repo, so you can see what a finished one actually weighs and how much of it turns out to be doctrine with its reason attached: <a href="https://github.com/h00pz/h00pz.github.io/blob/main/examples/pos-collection-architecture.md" target="_blank" rel="noopener">Subsystem Architecture: pos-collection</a>.
 
 ## Read Everything, Then Cross-Read
 

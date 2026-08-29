@@ -1,0 +1,52 @@
+---
+title: "Spec → Plan → Code: Slowing AI Down to Make It Faster"
+slug: spec-plan-code
+date: 2026-06-30
+draft: false
+description: "Coding agents are extremely good at producing implementation before anyone has agreed what to build. Forcing work through specification, planning, and only then code makes the architectural decisions explicit up front and cuts the rework that eats the time you thought you saved."
+tags:
+  - ai
+  - architecture
+  - hasf
+  - systems
+  - agents
+categories:
+  - AI Scar Tissue
+image: spec-plan-build.png
+---
+
+The single most impressive and most dangerous thing about a coding agent is how fast it will start writing code. You describe a vague notion of a feature, and before you've finished forming an opinion about what you actually want, there are files. Real, plausible, well-structured files, with tests, that do a thing. It feels like productivity, and sometimes it is, and sometimes it's the software equivalent of a contractor who starts pouring concrete while you're still deciding where the house goes.
+
+I spent a while enjoying that speed before I noticed the bill. The code an agent produces in the first thirty seconds encodes a hundred small decisions that nobody agreed to, and every one of those decisions is now load-bearing, because the tests pass and it looks done. When it turns out the boundary was wrong, or the thing it built solves a problem I'd already solved elsewhere, I don't get to keep the speed. I pay it all back, with interest, unwinding a confident implementation of the wrong idea.
+
+This post is about the discipline that got that time back, which sounds like it should be slower and is actually faster: force the work through specification, then planning, and only then code.
+
+## The Agent's Superpower Is Also the Trap
+
+It's worth being precise about what a coding agent is extraordinary at, because the fix isn't to use it less. It's genuinely brilliant at turning a well-specified, well-planned unit of work into correct code, quickly, including the parts I find tedious. That capability is real and I lean on it constantly.
+
+The trap is that it's equally happy to turn a badly-specified, unplanned notion into code, at the same speed, with the same confidence. It doesn't pause at ambiguity the way a careful human sometimes does. It resolves the ambiguity, silently, by picking something reasonable and building it, and now the ambiguity has an implementation and a passing test and the appearance of a decision. The agent didn't do anything wrong. It answered the question I asked, which was "build me something like this," when the question I needed answered first was "what exactly is this, and where does it belong."
+
+## Spec Is Where the Argument Happens
+
+So the first stage is a specification, and its entire job is to be the place where the disagreements happen before there's any code to defend. A spec states what the thing is for, what it owns, where its boundaries are, what it must never do, and what "done" actually means, and it does all of that in prose that's cheap to change because changing it costs a paragraph rather than a refactor.
+
+This is the same lesson as arguing before you write, moved up a level. Once code exists, everything after it bends to protect it, because throwing code away feels like waste even when it's the cheapest possible moment to throw it away. A spec has no such gravity. You can gut a spec, invert a boundary in it, or delete a whole section, and it costs nothing but the willingness to admit you were wrong on paper instead of in production. The specifications in pOS live in their own folder for exactly this reason, and a real one goes through several rounds of correction before a single line of implementation is planned. One spec I watched get scoped defined five separate ledger items with their boundaries drawn, and the arguing all happened there, in the cheap medium, where it belongs.
+
+## Plan Is Where the Order Gets Decided
+
+The second stage is a plan, which turns an agreed spec into an ordered sequence of implementable slices with their dependencies made explicit. This matters more than it sounds, because "build the spec" is not an instruction, it's a wish. A plan decides what gets built first, what has to exist before what, and where the natural seams in the work are, and it does that while there's still nothing to unwind if the order turns out to be wrong.
+
+In practice this is a committed document with a real identity, not a mental note. A plan gets written, reviewed, and committed with its own hash before the build task that implements it is even created, and each slice knows what it depends on. When implementation reveals that the plan was wrong, and it sometimes does, the plan gets corrected and re-committed, and only then does the code follow. The order is a decision you make deliberately, in a medium where changing your mind is free, rather than a thing that emerges by accident from whatever the agent happened to write first.
+
+## Code Is the Cheap Part, Once the Rest Is Done
+
+By the time you reach code, the interesting decisions are already made, which is the whole point. The agent is now doing the thing it's genuinely best at: implementing a bounded, well-specified, well-ordered slice, against a definition of done it can be held to. There's a ledger tracking which slices are complete, and each one gets checked off as it lands and is proven, so the work has a shape and a memory rather than being a pile of files that appeared.
+
+The result is that code stops being where the architecture gets decided by accident and goes back to being what it should be: the mechanical, verifiable execution of decisions that were made on purpose, earlier, more cheaply. The agent's speed is still there. It's just pointed at the part of the problem where speed is safe.
+
+## The Math of Slowing Down
+
+The reason this feels like a paradox and isn't is that the time you save by skipping the spec and the plan is real, and so is the time you lose paying for it later, and the second number is bigger. A wrong decision caught in a spec costs a paragraph. The same wrong decision caught in a plan costs a re-order. Caught in code, it costs a refactor and every downstream thing that was built on top of it. Caught in production, it costs an incident, a diagnosis, and the same refactor anyway, now with pressure. The cost of a mistake goes up by a rough order of magnitude at every stage it survives, and spec-plan-code is just a machine for catching mistakes as early and as cheaply as possible.
+
+None of this makes the agent slower at the thing it's fast at. It makes me slower at the thing I'm reckless at, which is committing to an architecture by accident because the code appeared before the decision did. Spec, then plan, then code isn't a way of restraining a coding agent. It's a way of making sure that when I finally let it run, at full speed, it's building the right thing, in the right order, and the fast part of the process lands on the part of the problem that was actually ready for it.

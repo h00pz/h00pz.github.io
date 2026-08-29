@@ -1,10 +1,7 @@
----
-title: "Subsystem Architecture: pos-collection"
-slug: pos-collection-architecture
-description: "A complete, real PortfolioOS subsystem architecture document, reproduced as the worked example for The Architecture Method."
----
+# Subsystem Architecture: pos-collection
 
-This is a complete, real subsystem architecture document from PortfolioOS, reproduced exactly as it's written in the repository. It's the worked example for the post [The Architecture Method: Argue First, Write Second](/p/the-architecture-method/), which describes the process that produces documents shaped like this one. Cross-references to other pOS documents are left as plain filenames, because those documents aren't published here.
+
+This is a complete, real subsystem architecture document from PortfolioOS, reproduced exactly as it's written in the repository. It's the worked example for the post [The Architecture Method: Argue First, Write Second](https://h00pz.github.io/p/the-architecture-method/), which describes the process that produces documents shaped like this one. Cross-references to other pOS documents are left as plain filenames, because those documents aren't published here.
 
 ---
 
