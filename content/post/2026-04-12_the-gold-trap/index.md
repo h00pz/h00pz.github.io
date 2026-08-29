@@ -113,7 +113,7 @@ action: long
 
 Every field can be individually supported by the source.
 
-The error exists in the relationship between them.
+The error exists in the relationship between them. It's the same shape I'd run into again and again and eventually give a name: [locally correct, globally wrong](/p/why-we-threw-away-portfolioos-v2/), where every part is right and the composition is false.
 
 The `action` is no longer authorized by the evidence because a later statement superseded the earlier tactical guidance.
 
@@ -187,7 +187,7 @@ This is why I've become skeptical of selecting small models primarily through pu
 
 A benchmark can tell me that a model is strong at math, coding, retrieval, instruction following, or some generalized reasoning task. Those results are useful when narrowing the field, but they can't tell me whether a model is safe for a particular architectural responsibility.
 
-For that, I need adversarial examples taken from the actual system.
+For that, I need adversarial examples taken from the actual system. This is the same place the current <a href="https://simonwillison.net/tags/evals/" target="_blank" rel="noopener">evals</a> conversation keeps landing: a generic benchmark tells you a model is broadly capable and says almost nothing about whether it's safe for your particular job, and the only thing that answers that is a small evaluation set built from your own real failures.
 
 The Gold Trap became one of those examples.
 
@@ -204,6 +204,14 @@ Those become regression tests for models.
 If a new 8 billion parameter model is faster, cheaper, and has twice the context window, great. Run the traps.
 
 If it can't tell me that the gold recommendation has been superseded, I already know something more important than its benchmark score.
+
+## It Wasn't Only a Test
+
+For a while the Gold Trap stayed what it started as, a document I fed to candidate models to watch them fail. Then pOS did the real version to me. A market brief the system generated shipped a thesis as still holding while that thesis's own falsifier had already fired. The system had written the breaking condition itself, in plain terms: this thesis fails if a certain market level is reached. That level had been breached for weeks. One section of the same brief cited the very evidence of the breach, and another section calmly asserted that the thesis held, and nothing in between noticed, because the part that wrote the falsifier and the part that judged the thesis never compared notes.
+
+That is the Gold Trap promoted from a test to production, and this time there was no candidate model to blame. Every component was locally correct. The falsifier was recorded correctly, the claim was retrieved correctly, the evidence was cited correctly, and the judgment was wrong because it lived in the relationship none of them owned, which is exactly the space [v2 taught me to distrust](/p/why-we-threw-away-portfolioos-v2/). This is also the moment the stakes stop being abstract. A green test suite is an engineering wound. A brief that tells you a broken thesis still holds is the system being confidently wrong about a decision, right up until someone acts on it.
+
+The fix was not a smarter model. It was a check that runs when the brief is assembled, compares every falsifier against the current state of the world, and refuses to ship a branch whose own trigger has already fired. A model can be argued out of a supersession. A gate cannot. The lesson the Gold Trap taught in a sandbox, the production version taught again with money on the other side of it: you don't defend against this class of error by hoping the model is nuanced enough, you defend against it by building the relationship the model keeps missing into something deterministic that checks it.
 
 ## Small Models Need Jobs
 
@@ -227,4 +235,4 @@ When I evaluate the next small model for PortfolioOS, I don't need it to be Qwen
 
 I need it to understand the gold.
 
-That's the durable requirement.
+That's the durable requirement. Though I should be honest about where the durability runs out. The trap suite only holds traps I've already been burned by. It will catch the next model that misses the gold supersession, reliably and forever, and it is useless against the first supersession of a kind I haven't seen yet. I catch the second instance of a mistake, always. The first one is still free, and I don't have a way around that, only a habit of turning each expensive failure into a trap the moment it costs me, so that it never gets to be free twice.

@@ -28,6 +28,8 @@ A system that crashes tells you where it is broken. A system that runs, produces
 
 The `null` monitoring state wasn't a bug in the sense of a line of code being wrong. Every component involved was locally correct. The pipeline correctly produced findings. The store correctly saved them. The positions correctly existed. What was missing was the join between them, the seam where a changed thesis was supposed to reach the position that depended on it. Nobody had built that seam, because nobody had been forced to say it existed. Each part did its job and the system as a whole didn't do its job, and there was no single place to point at, because the failure lived in the space between the parts. That space is exactly where I had never made anything explicit.
 
+I've since learned this failure has a name I use for it now: locally correct, globally wrong. Every part passes its own test while the whole quietly fails, because the defect isn't in any part but in the relation between them. v2's `null` was the first time it cost me something, and it was nowhere near the last. The same shape turns up later in this series in a model that read a document correctly and concluded from it falsely, in a test run that failed forty-six suites with nothing wrong in the code, and in a stack of architecture documents that were each right and collectively contradictory. One shape, wearing different costumes, and I kept meeting it because I kept leaving the relations between correct parts unspecified.
+
 ## Modules With No Seams
 
 Here's how v2 got that way, and it didn't feel like a mistake at any step. You build a component. It needs data from somewhere, so it reaches for it: a database table, a shared library, or another module's internals. That reach works. It's now real, undocumented, and load-bearing. Nothing ever made you declare it, so it stays invisible.
@@ -49,6 +51,8 @@ The tell, in hindsight, was simple: extending v2 had become harder than understa
 The deeper issue with all those safeguards was that most of them had lost their reasons. A rule would be added in response to some specific incident, the incident would fade from memory, and what remained was a constraint nobody could explain. And a rule whose reason has been forgotten has only two fates: it gets deleted the first time it is inconvenient, or it gets worked around, quietly, by the next person who hits it and can't see why it is there.
 
 Neither of those is the outcome you want. What you want is for the rule to be *argued*: for someone to look at it, see exactly which failure it prevents, and decide on the merits whether that failure still matters. That's only possible if the reason was recorded next to the rule. v2's rules weren't recorded that way. They were just there, a sediment of past fears, and I could no longer tell which ones were load-bearing and which were superstition.
+
+There's an old rule for exactly this situation, <a href="https://fs.blog/chestertons-fence/" target="_blank" rel="noopener">Chesterton's fence</a>: don't tear down a fence until you know why someone put it up. It's good advice, and v2 made it impossible to follow. I had built a hundred fences and recorded the reason for none of them, so when the time came to decide which ones to keep, I couldn't honor the rule even though I agreed with it. That, more than any single safeguard, is what convinced me the reason has to live next to the rule or it may as well not exist.
 
 ## Rebuilding Around What Actually Broke
 

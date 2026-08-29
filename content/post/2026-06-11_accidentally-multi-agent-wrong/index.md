@@ -35,7 +35,7 @@ I learned this most vividly not in the financial system but in the agents I use 
 
 One baseline test run failed forty-six suites, and none of the failures were in the code. They came from a working tree that a previous agent had left behind, whose files were being picked up by another agent's test command, which used the wrong configuration for them. Two agents had been operating in a space they both reached into, and the residue of one silently broke the other. On another occasion the same implementer agent was launched twice, a minute apart, after a context reset, and the two instances raced each other in two separate working trees, each half-aware that the other existed and neither owning the outcome.
 
-Nothing in either case was a code bug. Both were coordination failures, the exact thing that appears when you have multiple workers and no explicit account of who owns what, when, and where. The agents weren't wrong individually. The system that arranged them had never said what each one was responsible for, so they collided in the gaps.
+Nothing in either case was a code bug. Both were coordination failures, the exact thing that appears when you have multiple workers and no explicit account of who owns what, when, and where. The agents weren't wrong individually. The system that arranged them had never said what each one was responsible for, so they collided in the gaps. It's the [locally correct, globally wrong](/p/why-we-threw-away-portfolioos-v2/) shape again, made of processes this time instead of data: every agent behaving correctly, the whole confused, and the error living in the space nobody was told to own.
 
 ## What Was Actually Missing
 
