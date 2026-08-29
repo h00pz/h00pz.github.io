@@ -3,6 +3,8 @@ baseurl = "https://h00pz.github.io/"
 locale  = "en-us"
 title   = "The Rambling Thoughts of h00pz"
 
+enableRobotsTXT = true
+
 defaultContentLanguage = "en"
 hasCJKLanguage = false
 

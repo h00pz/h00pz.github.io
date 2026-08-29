@@ -15,7 +15,7 @@ categories:
 image: cover.png
 ---
 
-The previous post ended with a system I threw away and two things that replaced it. This is the first of those two: the framework. I've been referring to it obliquely since the very first post, promising it was a subject for another day. This is that day.
+[The previous post](/p/why-we-threw-away-portfolioos-v2/) ended with a system I threw away and two things that replaced it. This is the first of those two: the framework. I've been referring to it obliquely since [the very first post](/p/stop-building-agents.-start-building-systems./), promising it was a subject for another day. This is that day.
 
 It's called HASF, the h00pz Architecture Specification Framework, and the plainest way to describe it is this: it is a way of deciding what a system is before you build it, so that its boundaries, its ownership, and its failure states are chosen on purpose rather than discovered at runtime. PortfolioOS v2 was discovered at runtime. HASF exists so that never has to happen again.
 
@@ -123,4 +123,4 @@ None of these rules is exotic. Operator-first, semantics before machinery, one o
 
 That forcing is the whole value. Left to my own enthusiasm, I will start from the model, define the machinery, discover the semantics at runtime, let ownership emerge by accident, fabricate the missing pieces, and add complexity to paper over the confusion. That path has a name now. It was called v2.
 
-The next post is the other half of the answer: not the framework, but the lived process of using it, the actual week of building a subsystem this way, including every place the process broke. HASF is what I decided the rules should be. The method is what it felt like to follow them.
+[The next post](/p/the-architecture-method/) is the other half of the answer: not the framework, but the lived process of using it, the actual week of building a subsystem this way, including every place the process broke. HASF is what I decided the rules should be. The method is what it felt like to follow them.

@@ -47,7 +47,7 @@ When those four are explicit, adding an agent really is decomposition, because t
 
 The seductive thing about adding agents is the belief that intelligence will cover for the missing structure, that if each agent is capable enough it will figure out the coordination on its own. This is the same mistake as expecting a large context window or a clever prompt to compensate for absent architecture, and it fails the same way. A second agent handed an unclear job doesn't clarify the job. It simply has an unclear job too, and now the two of them have to agree, implicitly, about a boundary that was never drawn.
 
-This is where multi-agent systems quietly turn into the thing an earlier post in this series warned about: a collaboration that runs on natural-language handoffs and shared mutable space, where assumptions drift because nothing pins them down. The agents pass work between themselves, each interprets the previous one a little differently, and the system as a whole ends up confidently acting on something none of them actually established. More capable agents don't slow that drift. They make it more articulate.
+This is where multi-agent systems quietly turn into the thing [an earlier post in this series](/p/artifacts-not-conversations/) warned about: a collaboration that runs on natural-language handoffs and shared mutable space, where assumptions drift because nothing pins them down. The agents pass work between themselves, each interprets the previous one a little differently, and the system as a whole ends up confidently acting on something none of them actually established. More capable agents don't slow that drift. They make it more articulate.
 
 ## Isolation Helps, but It Is Not Coordination
 

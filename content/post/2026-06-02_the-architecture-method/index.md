@@ -15,7 +15,7 @@ categories:
 image: cover.png
 ---
 
-The previous post was the framework, the rules for deciding a system before you build it. This one is the other half, and it is the half you can't get from a document. It's what following those rules actually feels like, reconstructed from about a week of work that produced the v3 architecture: ten subsystems, their seams, and the shared API and persistence contracts. I had it written down for the same reason the framework exists at all: the process was the valuable thing, and processes evaporate.
+[The previous post](/p/introducing-hasf/) was the framework, the rules for deciding a system before you build it. This one is the other half, and it is the half you can't get from a document. It's what following those rules actually feels like, reconstructed from about a week of work that produced the v3 architecture: ten subsystems, their seams, and the shared API and persistence contracts. I had it written down for the same reason the framework exists at all: the process was the valuable thing, and processes evaporate.
 
 I'm going to include the parts that went wrong. That isn't modesty. The failure modes are the most useful thing in the method, because each one comes with a tell, a recognizable moment where you can catch it before it costs a day. If you only take one thing from this post, take the tells.
 

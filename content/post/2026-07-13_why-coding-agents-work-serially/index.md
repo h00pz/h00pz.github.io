@@ -16,7 +16,7 @@ image: why-coding-agents-work-serially.png
 
 If you'd told me a year ago that I'd end up running my coding agents mostly one at a time, on purpose, I'd have assumed I was doing it wrong. The entire pitch of agents is parallelism. You have a fleet of tireless workers who never need coffee, so obviously you point all of them at the problem at once and collect your tenfold speedup. Running them serially sounds like buying a race car and driving it in first gear.
 
-And yet here I am, sequencing them deliberately, because I've watched what parallel does to a system whose architecture is still moving, and it isn't a speedup. It's a very fast way to generate work that has to be redone. The previous post was about coordination being the expensive part of a multi-agent system. This one is the practical consequence I actually live by, which is that when the ground is still shifting, the cheapest coordination strategy is often just to go one at a time.
+And yet here I am, sequencing them deliberately, because I've watched what parallel does to a system whose architecture is still moving, and it isn't a speedup. It's a very fast way to generate work that has to be redone. [The previous post](/p/subagents-cheap-coordination-expensive/) was about coordination being the expensive part of a multi-agent system. This one is the practical consequence I actually live by, which is that when the ground is still shifting, the cheapest coordination strategy is often just to go one at a time.
 
 This isn't an argument against parallelism forever. It's an argument that parallelism has a prerequisite most people skip, and that serial execution is the honest default until you've met it.
 

@@ -46,7 +46,7 @@ This is the boundary that matters. The model performs inference inside it, retur
 
 ## Intelligence Should End at the Seam
 
-In the previous post, I wrote about why the seam is the product. The seam is the explicit contract between components. It defines what crosses a boundary, what doesn't, and what each side is allowed to assume. Small model systems depend on those seams because without them, you don't really have a collection of specialized models. You have a distributed prompt.
+In [the previous post](/p/the-seam-is-the-product/), I wrote about why the seam is the product. The seam is the explicit contract between components. It defines what crosses a boundary, what doesn't, and what each side is allowed to assume. Small model systems depend on those seams because without them, you don't really have a collection of specialized models. You have a distributed prompt.
 
 That failure mode is easy to create. Every worker starts reaching into shared state, every model begins depending on undocumented context, one worker assumes another already normalized something, and another quietly compensates for malformed output. Eventually, the behavior of the system depends on an invisible network of assumptions spread across prompts.
 
