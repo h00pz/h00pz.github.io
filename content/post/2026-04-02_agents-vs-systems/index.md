@@ -101,7 +101,7 @@ After repeatedly encountering these same problems in PortfolioOS and Atlas, I ev
 
 HASF formalizes a lot of the ideas described here: defining architecture before implementation, identifying ownership and seams, separating deterministic services from model inference, making failure states explicit, and establishing what "done" actually means before a model starts producing code.
 
-There's quite a bit more to HASF than I can reasonably cover without turning this into a completely different article, so **HASF is a post for another day**. For this discussion, the important point is that it grew out of the same realization: the quality of an AI application depends at least as much on the architecture surrounding the model as it does on the model itself.
+There's quite a bit more to HASF than I can reasonably cover without turning this into a completely different article, so **HASF is a post for another day**, though the entire framework is <a href="https://github.com/h00pz/h00pz.github.io/blob/main/examples/hasf.md" target="_blank" rel="noopener">reproduced in full in this site's repo</a> if you'd rather see the whole thing now than wait for the write-up. For this discussion, the important point is that it grew out of the same realization: the quality of an AI application depends at least as much on the architecture surrounding the model as it does on the model itself.
 
 ## Atlas And PortfolioOS
 
