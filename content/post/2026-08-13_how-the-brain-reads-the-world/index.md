@@ -72,6 +72,10 @@ The fix was to change what a claim even is. A claim is no longer a load-bearing 
 
 And one of those five parts, the *when it gets tested*, quietly demanded infrastructure of its own. A claim that says "this reverses if the next inflation print comes in soft" is only worth anything if the system actually knows when the next print lands. So the humble test-date field on a claim is what forced me to build a forward calendar: a harvested, continuously updated view of the upcoming releases, central-bank dates, and events, so that every claim's test date resolves to a real thing on a real timeline instead of a vague "later." A structured claim needs a structured future to be tested against, and I didn't have one until a fake quote made me build it.
 
+![The pOS forward calendar: upcoming economic releases, central-bank dates, and events on a timeline.](forward-calendar.png)
+
+*The structured future a claim's test date resolves against. Every "this reverses if the next print comes in soft" now points at a real row on this timeline, not a vague "later."*
+
 ## What the Reading Can't Do
 
 The mapper closes the loop I most wanted closed: the graph now reads the world into itself, autonomously on the common case, and asks for me only on a genuinely new belief. But I want to be exact about the seam it doesn't cover, because it's a big one. The mapper decides where a claim fits and how it relates. It does not decide whether the claim is *true*. A confidently written, completely false statement attaches just as cleanly as a true one, lands as `supports`, and strengthens a branch it had no business touching, and nothing in the fit-gate will catch it, because the fit-gate guards the structure of my beliefs, not the truth of the evidence. Keeping the world from lying to the graph is a different machine entirely, the one that verifies the evidence before it's trusted, and that machine is a later post. What this one guarantees is narrower and still worth everything: the model can read my worldview, and it cannot invent it.

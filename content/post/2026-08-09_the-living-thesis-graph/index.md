@@ -32,6 +32,10 @@ The tempting way to store a worldview is as prose. A document per thesis, update
 
 A belief, structurally, is not a document. It's a claim, plus the evidence for it, plus the evidence against it, plus the horizon over which it's supposed to hold. That's a graph. So the Brain stores its worldview as one: branches, which are the individual beliefs, and evidence, which is the material bearing on them, connected by edges that say how. Modeling it as a graph isn't a database-choice flourish. It's the only shape that lets you ask the questions that matter, because every one of those questions is a traversal.
 
+![The pOS thesis page: a belief branch with its statement, its falsifier, and the supporting, weakening, and refuting evidence hanging off it.](thesis-page.png)
+
+*A branch as the system actually shows it: the statement, the falsifier it's graded against, and the evidence edges reading for and against it. This is the graph from the paragraph above, rendered as the thing I read instead of querying rows by hand.*
+
 ## The Branch, and the Field That Carries It
 
 A single belief is a branch node, and the type is almost aggressively small:

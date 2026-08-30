@@ -115,6 +115,10 @@ readonly disposition: 'granted' | 'denied';
 
 The model can name any tool it likes. If that tool isn't in the allow-list the run was admitted with, the call is recorded with a `denied` disposition and never executes. It's the same distinction running through the whole runtime: what the model can *see* and what the model can *do* are different sets, drawn by code, and the gap between them is where the safety lives.
 
+![The pOS capability registry, listing connectors and the capabilities each one is granted.](the-registry.png)
+
+*The registry the grant is resolved from. Each entry declares what a thing is and what it may reach, so the allow-list a run is admitted with is a fact recorded here, not a request the model gets to make at runtime.*
+
 ## Freedom of Thought, No Authority to Act
 
 That's the shape, and once you see it the paradox in the title dissolves. An agentic worker isn't a contradiction. It's a worker whose bounded job happens to be *reasoning*, and reasoning is the one job you can't do with a fixed control flow, so the model is allowed to drive the loop. But it drives the loop inside a Kubernetes worker, over read-only tools, under a step and token budget, with its output parsed by code that assumes it's wrong, its size overruled by code that knows the limits, and its every conclusion handed to a human as a proposal rather than an act.
