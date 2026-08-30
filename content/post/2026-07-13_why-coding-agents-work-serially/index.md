@@ -10,7 +10,7 @@ tags:
   - agents
   - systems
 categories:
-  - The Agentic SDLC
+  - AI Coding Scar Tissue
 image: why-coding-agents-work-serially.png
 ---
 

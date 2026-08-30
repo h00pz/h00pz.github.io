@@ -11,7 +11,7 @@ tags:
   - seams
   - systems
 categories:
-  - The Agentic SDLC
+  - AI Coding Scar Tissue
 image: architecture-docs-agrue-with-themselves.png
 ---
 

@@ -11,7 +11,7 @@ tags:
   - systems
   - hasf
 categories:
-  - The Agentic SDLC
+  - AI Coding Scar Tissue
 image: the-teeth-are-in-the-hooks.png
 ---
 

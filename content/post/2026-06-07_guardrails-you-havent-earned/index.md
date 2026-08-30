@@ -10,7 +10,7 @@ tags:
   - systems
   - hasf
 categories:
-  - The Agentic SDLC
+  - AI Coding Scar Tissue
 image: cover.png
 ---
 

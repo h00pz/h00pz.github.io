@@ -10,7 +10,7 @@ tags:
   - hasf
   - systems
 categories:
-  - The Agentic SDLC
+  - AI Coding Scar Tissue
 image: done-is-an-architectural-property.png
 ---
 

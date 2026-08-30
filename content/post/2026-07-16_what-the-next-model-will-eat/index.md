@@ -11,7 +11,7 @@ tags:
   - systems
   - seams
 categories:
-  - The Agentic SDLC
+  - AI Coding Scar Tissue
 image: what-the-next-model-will-eat.png
 ---
 
