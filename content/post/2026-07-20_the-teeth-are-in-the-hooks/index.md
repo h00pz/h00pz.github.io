@@ -2,7 +2,7 @@
 title: "The Teeth Are in the Hooks"
 slug: the-teeth-are-in-the-hooks
 date: 2026-07-20
-draft: true
+draft: false
 description: "Every post in this series is a rule I've broken while excited. So I built a harness to hold the rules for me, and the enforcement must live in code, not prose."
 tags:
   - ai
