@@ -11,7 +11,7 @@ tags:
   - systems
   - state
 categories:
-  - AI Scar Tissue
+  - The Agentic SDLC
 image: as-built-vs-desired.png
 ---
 

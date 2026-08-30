@@ -2,7 +2,7 @@
 title: "What the Next Model Will Eat"
 slug: what-the-next-model-will-eat
 date: 2026-07-16
-draft: true
+draft: false
 description: "The harness you build for today's model is mostly debt. But seams, state, and ownership aren't scaffolding for a weak model; they're the shape of the problem."
 tags:
   - ai
@@ -11,7 +11,7 @@ tags:
   - systems
   - seams
 categories:
-  - AI Scar Tissue
+  - The Agentic SDLC
 image: what-the-next-model-will-eat.png
 ---
 

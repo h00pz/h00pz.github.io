@@ -11,7 +11,7 @@ tags:
   - systems
   - pos
 categories:
-  - AI Scar Tissue
+  - The Agentic SDLC
 image: cover.png
 ---
 

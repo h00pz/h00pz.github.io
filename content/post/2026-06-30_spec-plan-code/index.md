@@ -11,7 +11,7 @@ tags:
   - systems
   - agents
 categories:
-  - AI Scar Tissue
+  - The Agentic SDLC
 image: spec-plan-build.png
 ---
 
