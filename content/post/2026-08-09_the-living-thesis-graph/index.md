@@ -11,6 +11,7 @@ tags:
   - pos
 categories:
   - AI Systems Engineering
+image: the-living-thesis-graph.png
 ---
 
 Before any of this was software, there was a paper. For a while I wrote my own market letter, a running argument with myself about what was actually going on in the world, and I shared it with a few friends. It had a name, The Five-Cycle Convergence, because its spine was a bet that five big cycles, business, credit, liquidity, geopolitical, and housing, were converging at the same time. I liked writing it. What I did not like, and what eventually wore me down, was everything that came before the writing: the endless hunting through the news for the handful of tidbits that actually bore on what I believed, holding a dozen half-remembered threads in my head at once and trying not to lose the one that mattered. It was a cognitive load I couldn't keep carrying, so the letter got less frequent, and then it stopped.
