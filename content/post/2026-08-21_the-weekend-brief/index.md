@@ -2,7 +2,7 @@
 title: "The Weekend Brief"
 slug: the-weekend-brief
 date: 2026-08-21
-draft: true
+draft: false
 description: "Turning the living graph into a paper I'd read took a dozen fixes, and not one was a smarter model. Every one was a human catching what broke."
 tags:
   - ai

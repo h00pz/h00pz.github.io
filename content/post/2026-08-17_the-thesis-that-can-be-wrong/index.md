@@ -2,7 +2,7 @@
 title: "The Thesis That Can Be Wrong"
 slug: the-thesis-that-can-be-wrong
 date: 2026-08-17
-draft: true
+draft: false
 description: "A thesis that only accumulates supporting evidence is a thesis that cannot be wrong. This is the machinery that makes mine able to lose."
 tags:
   - ai

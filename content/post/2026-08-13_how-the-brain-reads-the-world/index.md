@@ -2,7 +2,7 @@
 title: "How the Brain Reads the World"
 slug: how-the-brain-reads-the-world
 date: 2026-08-13
-draft: true
+draft: false
 description: "The job I most wanted off my plate was reading the news into my thesis. It's also the one where a model most wants to invent, so it runs inside a cage."
 tags:
   - ai
