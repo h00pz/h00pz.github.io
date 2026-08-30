@@ -2,7 +2,7 @@
 title: "The Deterministic Sandwich"
 slug: the-deterministic-sandwich
 date: 2026-07-28
-draft: true
+draft: false
 description: "How I turn a would-be agent into a Kubernetes worker: a bounded model call as the filling, deterministic input and output as the bread, the prompt as config."
 tags:
   - ai

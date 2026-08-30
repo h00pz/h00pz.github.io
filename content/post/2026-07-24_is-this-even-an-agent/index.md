@@ -12,6 +12,7 @@ tags:
   - pos
 categories:
   - AI Systems Engineering
+image: is-this-even-an-agent.png
 ---
 
 I have run PortfolioOS on three different agent runtimes now. It started on LangGraph, moved toward OpenShell, and ended up on one I wrote myself, and for most of that journey I thought the thing I was shopping for was a framework. I was comparing orchestration models and checkpointer implementations and sandbox boundaries, sure that somewhere in that space was the right way to run an agent. What I actually needed was to stop and ask a much dumber question, which is the one this post is about: of all the things I was calling agents, how many of them were agents at all? The answer, when I finally counted, was almost none, and that number is what reorganized the whole design.
