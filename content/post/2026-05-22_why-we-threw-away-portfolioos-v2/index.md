@@ -5,10 +5,10 @@ date: 2026-05-22
 draft: false
 description: "PortfolioOS v2 accreted safeguards, abstractions, and rules until extending it became harder than understanding the failures those rules were meant to prevent."
 tags:
-  - ai
   - architecture
   - systems
-  - pos
+  - state
+  - seams
 categories:
   - AI Coding Scar Tissue
 image: cover.png

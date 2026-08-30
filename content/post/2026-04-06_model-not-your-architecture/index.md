@@ -4,10 +4,10 @@ date: 2026-04-06
 draft: false
 description: "Models are replaceable components. The architecture around them is the durable part of an AI application."
 tags:
-  - ai
   - architecture
-  - small-language-models
-  - software-architecture
+  - model-selection
+  - slm
+  - systems
 categories:
   - Small Model Systems
 image: cover.png

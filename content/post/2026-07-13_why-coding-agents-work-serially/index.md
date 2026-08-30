@@ -5,10 +5,10 @@ date: 2026-07-13
 draft: false
 description: "Parallel agents change each other's assumptions underneath. While the architecture still moves, serial execution beats parallelism and is easier to trust."
 tags:
-  - ai
-  - architecture
   - agents
-  - systems
+  - subagents
+  - workers
+  - architecture
 categories:
   - AI Coding Scar Tissue
 image: why-coding-agents-work-serially.png

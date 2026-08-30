@@ -4,11 +4,10 @@ date: 2026-04-24
 draft: false
 description: "The durable part of an architecture is not the component. It is the contract that lets everything around it change."
 tags:
-  - ai
-  - architecture
   - seams
+  - architecture
   - systems
-  - small-language-models
+  - agents
 categories:
   - Small Model Systems
 image: cover.png

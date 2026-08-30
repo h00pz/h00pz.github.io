@@ -5,10 +5,10 @@ date: 2026-08-09
 draft: false
 description: "The heart of PortfolioOS is a graph of what I believe, at what horizon, and what would prove me wrong. How it's shaped, and why the falsifier carries it."
 tags:
-  - ai
+  - graphs
   - architecture
+  - state
   - systems
-  - pos
 categories:
   - AI Systems Engineering
 image: the-living-thesis-graph.png

@@ -4,10 +4,11 @@ date: 2026-04-17
 draft: false
 description: "The best AI systems know exactly where inference belongs, and where ordinary software should take over."
 tags:
-  - ai
-  - architecture
   - agents
-  - small-language-models
+  - agentic
+  - workflows
+  - deterministic
+  - slm
 categories:
   - Small Model Systems
 image: cover.png

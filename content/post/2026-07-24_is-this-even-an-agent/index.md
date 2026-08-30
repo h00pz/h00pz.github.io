@@ -5,11 +5,11 @@ date: 2026-07-24
 draft: false
 description: "Three agent runtimes in, the question that mattered wasn't which framework to use. It was whether the thing I kept calling an agent was one at all."
 tags:
-  - ai
-  - architecture
   - agents
-  - systems
-  - pos
+  - agentic
+  - workflows
+  - workers
+  - harness
 categories:
   - AI Systems Engineering
 image: is-this-even-an-agent.png

@@ -5,11 +5,10 @@ date: 2026-05-27
 draft: false
 description: "The h00pz Architecture Specification Framework decides a system's boundaries, ownership, and failure states on purpose, before an accidental architecture forms."
 tags:
-  - ai
   - architecture
-  - hasf
+  - spec-driven-development
   - systems
-  - pos
+  - agents
 categories:
   - AI Coding Scar Tissue
 image: cover.png

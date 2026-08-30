@@ -5,11 +5,11 @@ date: 2026-07-20
 draft: false
 description: "Every post in this series is a rule I've broken while excited. So I built a harness to hold the rules for me, and the enforcement must live in code, not prose."
 tags:
-  - ai
-  - architecture
+  - harness
   - agents
-  - systems
-  - hasf
+  - subagents
+  - guardrails
+  - spec-driven-development
 categories:
   - AI Coding Scar Tissue
 image: the-teeth-are-in-the-hooks.png

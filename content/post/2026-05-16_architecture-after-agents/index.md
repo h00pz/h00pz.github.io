@@ -5,10 +5,9 @@ date: 2026-05-16
 draft: false
 description: "Once models become bounded workers, AI applications start to look like familiar distributed systems, and AI engineering looks like software engineering again."
 tags:
-  - ai
+  - distributed-systems
   - architecture
   - systems
-  - distributed-systems
   - agents
 categories:
   - Small Model Systems

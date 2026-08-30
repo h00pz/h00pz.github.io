@@ -5,11 +5,11 @@ date: 2026-05-11
 draft: false
 description: "Multi-agent systems drift when agents pass conversations back and forth. They should collaborate through typed artifacts with schemas and clear ownership."
 tags:
-  - ai
-  - architecture
   - agents
+  - multi-agent
   - seams
-  - systems
+  - workers
+  - architecture
 categories:
   - Small Model Systems
 image: cover.png

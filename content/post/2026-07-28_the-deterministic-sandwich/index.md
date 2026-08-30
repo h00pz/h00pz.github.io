@@ -5,11 +5,11 @@ date: 2026-07-28
 draft: false
 description: "How I turn a would-be agent into a Kubernetes worker: a bounded model call as the filling, deterministic input and output as the bread, the prompt as config."
 tags:
-  - ai
-  - architecture
-  - agents
-  - systems
-  - pos
+  - agentic
+  - workers
+  - deterministic
+  - prompts
+  - structured-outputs
 categories:
   - AI Systems Engineering
 image: the-deterministic-sandwich.png

@@ -5,9 +5,7 @@ date: 2026-06-25
 draft: false
 description: "An architecture doc and its derived seams drift apart. Cross-reading, checking adjacent specs for disagreements, catches it before production does."
 tags:
-  - ai
   - architecture
-  - hasf
   - seams
   - systems
 categories:

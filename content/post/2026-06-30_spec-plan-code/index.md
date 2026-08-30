@@ -5,11 +5,11 @@ date: 2026-06-30
 draft: false
 description: "Coding agents write implementation before anyone agrees what to build. Forcing spec, then plan, then code makes decisions explicit and cuts costly rework."
 tags:
-  - ai
-  - architecture
-  - hasf
-  - systems
+  - spec-driven-development
   - agents
+  - agentic
+  - workers
+  - harness
 categories:
   - AI Coding Scar Tissue
 image: spec-plan-build.png

@@ -4,10 +4,10 @@ date: 2026-04-20
 draft: false
 description: "A practical construction method for building AI systems from durable architecture down to replaceable model workers."
 tags:
-  - ai
   - architecture
+  - seams
+  - workers
   - systems
-  - small-language-models
   - agents
 categories:
   - Small Model Systems

@@ -4,10 +4,10 @@ date: 2026-05-05
 draft: false
 description: "Important application knowledge shouldn't depend on what a model happens to remember. Facts, decisions, history, and artifacts belong in queryable stores."
 tags:
-  - ai
-  - architecture
   - state
+  - architecture
   - agents
+  - context-engineering
   - systems
 categories:
   - Small Model Systems

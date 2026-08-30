@@ -5,11 +5,11 @@ date: 2026-06-11
 draft: false
 description: "Adding more agents feels like decomposition, but splitting responsibilities without defining contracts only distributes ambiguity across more components."
 tags:
-  - ai
-  - architecture
+  - multi-agent
+  - subagents
   - agents
-  - systems
   - seams
+  - architecture
 categories:
   - AI Coding Scar Tissue
 image: cover.png

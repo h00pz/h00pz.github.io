@@ -5,9 +5,9 @@ date: 2026-07-06
 draft: false
 description: "A feature that works once isn't finished, especially with inference. Done means deterministic, observable, repeatable, honest, safe, and narrow, by design."
 tags:
-  - ai
   - architecture
-  - hasf
+  - evals
+  - observability
   - systems
 categories:
   - AI Coding Scar Tissue

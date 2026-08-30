@@ -5,11 +5,10 @@ date: 2026-06-15
 draft: false
 description: "Most projects fix a failure and move on, losing the reason a rule exists. The Failure Manifest Log keeps every constraint tied to the failure that created it."
 tags:
-  - ai
   - architecture
-  - hasf
-  - systems
   - state
+  - observability
+  - systems
 categories:
   - AI Coding Scar Tissue
 image: cover.png

@@ -5,10 +5,11 @@ date: 2026-08-05
 draft: true
 description: "I run my coding agents on Opus and GLM at once, behind one URL, through a proxy that does the single job I needed and refuses every clever job I didn't."
 tags:
-  - ai
-  - architecture
-  - systems
+  - model-routing
+  - harness
   - agents
+  - subagents
+  - distributed-systems
 categories:
   - AI Systems Engineering
 image: the-router-translates-nothing.png

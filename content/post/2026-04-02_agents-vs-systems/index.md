@@ -4,10 +4,11 @@ date: 2026-04-02
 draft: false
 description: "Reliable AI apps bound model inference inside explicit architecture, persistent state, and clear seams, instead of handing everything to one autonomous agent."
 tags:
-  - ai
-  - architecture
   - agents
-  - small-language-models
+  - architecture
+  - systems
+  - workers
+  - slm
 categories:
   - Small Model Systems
 image: cover.png

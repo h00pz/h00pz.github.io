@@ -5,10 +5,11 @@ date: 2026-08-21
 draft: false
 description: "Turning the living graph into a paper I'd read took a dozen fixes, and not one was a smarter model. Every one was a human catching what broke."
 tags:
-  - ai
-  - architecture
-  - systems
-  - pos
+  - prompts
+  - evals
+  - slm
+  - graphs
+  - agentic
 categories:
   - AI Systems Engineering
 image: the-weekend-brief.png

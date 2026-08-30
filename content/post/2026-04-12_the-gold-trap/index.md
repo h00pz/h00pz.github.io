@@ -4,11 +4,10 @@ date: 2026-04-12
 draft: false
 description: "The Gold Trap exposed an important lesson in small model selection: extracting the right facts is not the same as understanding which facts still govern."
 tags:
-  - ai
+  - model-selection
+  - slm
+  - evals
   - architecture
-  - small-language-models
-  - gemma
-  - qwen
 categories:
   - Small Model Systems
 image: cover.png

@@ -5,10 +5,10 @@ date: 2026-06-07
 draft: false
 description: "Durable guardrails trace back to concrete failure modes. Speculative governance eventually creates complexity without any matching increase in safety."
 tags:
-  - ai
+  - guardrails
+  - agents
   - architecture
   - systems
-  - hasf
 categories:
   - AI Coding Scar Tissue
 image: cover.png

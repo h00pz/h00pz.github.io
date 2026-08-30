@@ -5,11 +5,11 @@ date: 2026-07-16
 draft: false
 description: "The harness you build for today's model is mostly debt. But seams, state, and ownership aren't scaffolding for a weak model; they're the shape of the problem."
 tags:
-  - ai
   - architecture
-  - agents
-  - systems
   - seams
+  - state
+  - harness
+  - bounded-inference
 categories:
   - AI Coding Scar Tissue
 image: what-the-next-model-will-eat.png

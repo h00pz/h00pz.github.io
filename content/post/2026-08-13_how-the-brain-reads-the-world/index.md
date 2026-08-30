@@ -5,10 +5,11 @@ date: 2026-08-13
 draft: false
 description: "The job I most wanted off my plate was reading the news into my thesis. It's also the one where a model most wants to invent, so it runs inside a cage."
 tags:
-  - ai
-  - architecture
-  - systems
-  - pos
+  - graphs
+  - agents
+  - prompts
+  - tools
+  - structured-outputs
 categories:
   - AI Systems Engineering
 image: how-the-brain-reads-the-world.png

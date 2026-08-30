@@ -4,11 +4,10 @@ date: 2026-05-02
 draft: false
 description: "A larger context window can hide missing boundaries for a surprisingly long time, but it does not create durable state or clear responsibility."
 tags:
-  - ai
+  - context-engineering
+  - rag
   - architecture
-  - systems
-  - context
-  - retrieval
+  - slm
 categories:
   - Small Model Systems
 image: cover.png

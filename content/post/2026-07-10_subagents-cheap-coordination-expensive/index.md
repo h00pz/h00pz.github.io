@@ -5,11 +5,11 @@ date: 2026-07-10
 draft: false
 description: "Launching several agents is trivial, but each adds assumptions and sync cost. The bottleneck was never parallelism; it's ownership, sequencing, and state."
 tags:
-  - ai
-  - architecture
+  - subagents
+  - multi-agent
   - agents
-  - systems
-  - seams
+  - workers
+  - model-routing
 categories:
   - AI Coding Scar Tissue
 image: subagents-cheap-coordination-expensive.png

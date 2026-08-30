@@ -5,10 +5,9 @@ date: 2026-06-02
 draft: false
 description: "HASF is the rules for specifying a system first. This is what following them felt like: a week building a subsystem, including every way I got it wrong."
 tags:
-  - ai
   - architecture
-  - hasf
   - seams
+  - spec-driven-development
   - systems
 categories:
   - AI Coding Scar Tissue

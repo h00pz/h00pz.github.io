@@ -5,11 +5,10 @@ date: 2026-06-20
 draft: false
 description: "Diagrams describe intent; running systems accumulate difference. Keep the desired end state and the as-built reality in separate documents to trust either one."
 tags:
-  - ai
   - architecture
-  - hasf
-  - systems
   - state
+  - systems
+  - observability
 categories:
   - AI Coding Scar Tissue
 image: as-built-vs-desired.png

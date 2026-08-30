@@ -4,10 +4,9 @@ date: 2026-04-29
 draft: false
 description: "Small models work best when their responsibilities are narrow, their seams are explicit, and the surrounding system stays deterministic."
 tags:
-  - ai
-  - architecture
-  - small-language-models
+  - slm
   - seams
+  - architecture
   - systems
 categories:
   - Small Model Systems
