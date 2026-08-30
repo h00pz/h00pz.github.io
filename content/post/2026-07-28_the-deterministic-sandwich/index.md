@@ -81,6 +81,8 @@ export function parseProposedPacks(raw: unknown): readonly ProposedPack[] | null
 
 Every branch in there is a small act of distrust. A pack with no name is dropped. A weight that isn't a finite number between zero and a hundred is dropped, silently and honestly, rather than coerced into something plausible. And if nothing survives, the function returns `null`, which the caller reads as an honest gap. It does not return an empty design dressed up as a real one. The model can produce garbage, and the worst that garbage can do is become a recorded absence, never a fabricated recommendation.
 
+This is the same instinct Jason Liu compressed into a talk he titled <a href="https://jxnl.co/writing/2023/11/02/ai-engineer-keynote-pydantic-is-all-you-need/" target="_blank" rel="noopener">Pydantic is all you need</a>: make the model emit a typed object and let ordinary code inspect, validate, and retry it, instead of trusting prose. The parser above is that idea with the trust dialed to zero, which is what you want when the typed object it's checking decides where money goes.
+
 That honest-gap discipline runs through every worker in the system, not just this one. The position-review worker records exactly why it produced nothing, from a small fixed vocabulary:
 
 ```typescript

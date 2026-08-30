@@ -40,6 +40,8 @@ Once you separate those, done stops being something you assert and becomes somet
 
 A feature that's built and merged but never proven against the running system stays in an honest "built" state and refuses to promote itself to done. That refusal is the whole point. It would be easy and comforting to let a passing test flip something to done, and it would also be a small manufactured completeness, which the framework treats as worse than an honest gap. The system would rather admit a thing is built but unproven than claim a doneness nobody actually witnessed.
 
+This is the same drum Hamel Husain has been beating for the industry: the thing that separates AI products that work from ones that don't is a real <a href="https://hamel.dev/blog/posts/evals/" target="_blank" rel="noopener">eval system</a>, built in tiers with cheap, deterministic code assertions as the first line before you ever reach for a model-graded one. My "proven against the running system" is that first tier with the bar set at the architecture itself, a check that fires against reality rather than a feeling that the demo went well.
+
 ## The Properties of Done
 
 When you make done explicit, it turns out to have parts, and naming them is what lets you check for each one instead of squinting at a demo. Done is deterministic where it should be, so the parts that don't need inference behave the same way every time. It's observable, so you can see not just that it ran but what it received and what it concluded. It's repeatable, so a second run against the same state is safe rather than a fresh roll of the dice.

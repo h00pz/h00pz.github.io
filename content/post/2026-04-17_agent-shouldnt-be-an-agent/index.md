@@ -158,6 +158,8 @@ Retries become harder to reason about because a second execution may choose a di
 
 Policy enforcement becomes dangerous if the model is responsible for interpreting whether an operation is allowed, and testing becomes statistical rather than exact. None of these problems mean models are bad. They mean inference has a cost, and you should spend uncertainty where uncertainty buys you something.
 
+Chip Huyen puts a number on why this compounds. Her <a href="https://huyenchip.com/2025/01/07/agents.html" target="_blank" rel="noopener">reliability math</a> is blunt: per-step accuracy multiplies, so a chain of model decisions that are each ninety-five percent reliable is barely better than a coin flip by the tenth step. Every deterministic step you hand back to inference doesn't add a little uncertainty, it multiplies what's already there, which is why the cheapest way to make an agent reliable is usually to make it less of an agent.
+
 ## Bound the Model
 
 This is where the idea connects back to the architecture I've been building in PortfolioOS (pOS, the AI-driven portfolio research and management system I use as a running architecture experiment).

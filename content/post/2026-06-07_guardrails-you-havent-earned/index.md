@@ -34,6 +34,8 @@ The discipline that pulled me out of this is simple to state and surprisingly ha
 
 When I rebuilt the architecture, the strongest documents anchored each of their central rules on a real incident, named concretely. The Brain subsystem's document doesn't say "monitoring is important." It says that in v2 the thesis pipeline produced genuine work and the monitoring state was null on all fifty-six positions, and then it derives the rule from that wreck. The market intelligence document is anchored on semiconductors, a specific batch of expired puts, and stale cron jobs, not on the abstract idea that stale data is bad. An abstract failure mode constrains nobody, because it can be satisfied a hundred ways and argued away in any of them. A named one constrains the design, because everyone can see the exact hole it is covering.
 
+Shreya Shankar makes the same argument about evaluation, and it carries straight over to guardrails: the criteria that matter come from <a href="https://www.sh-reya.com/blog/ai-engineering-flywheel/" target="_blank" rel="noopener">looking at your actual data</a>, the real failures the system produced, not from a list of things you brainstormed in a design meeting. A guardrail that came out of error analysis is covering a hole that exists. One that came out of imagination is covering a hole you pictured, and the two are not the same size or even in the same place.
+
 This changes what a guardrail is. It stops being a fence you put up because the drop looks dangerous, and it becomes a patch over a place where someone actually fell.
 
 ## Architecture Is Not the Same as Worry

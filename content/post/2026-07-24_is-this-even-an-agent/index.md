@@ -58,6 +58,8 @@ An execution sandbox is exactly what you need for a genuine agent, the kind that
 
 So the question was never which agent framework to run. It was, for each unit of work, *is this even an agent?* And that turns out to have a precise, checkable answer, because the thing that makes something an agent isn't whether it uses a model. It's whether the model chooses the next step.
 
+I didn't invent that line, and it's reassuring that the field settled on the same one. Anthropic draws it identically, <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">workflows where code decides the path versus agents where the model does</a>, and Simon Willison's plain definition, <a href="https://simonw.substack.com/p/i-think-agent-may-finally-have-a" target="_blank" rel="noopener">an LLM that runs tools in a loop to achieve a goal</a>, puts that same model-driven loop at the center of what makes a thing an agent. My classification gate is just that distinction turned into code that won't let a unit lie about which side of it it's on.
+
 That distinction became the first thing I built in the runtime I finally wrote for v3. It's a classification gate, and its entire job is to make every unit of work declare which it is, and then check the declaration instead of trusting it:
 
 ```typescript

@@ -61,6 +61,8 @@ Every one of those is an architectural property. A window can't supply any of th
 
 The healthier stance is that the model doesn't get to see whatever is available. The system decides what it sees, deliberately, for each task.
 
+This is the instinct the field has started calling context engineering. Anthropic frames <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">context as a finite resource</a> to be curated deliberately, compacted, and offloaded to external notes rather than poured in wholesale, and warns about the "context rot" that sets in when you don't. I'd put it one notch harder than resource management: deciding what the model sees is architecture, and the window is only where that decision briefly sits.
+
 This is the same discipline as bounding a worker's responsibility, applied to its inputs. A worker that judges whether new evidence changes an investment thesis needs the thesis, the new evidence, the set of allowed classifications, and enough surrounding context to tell them apart. It doesn't need the entire portfolio, every prior research session, or the household's financial plan, even if all of that would fit.
 
 Fitting isn't the test. The test is relevance and authority. Every additional thing in the window is something the model might weight, misread, or let override the piece that actually mattered. A larger window raises the ceiling on how much irrelevant material you can accidentally include, which isn't obviously a gift.

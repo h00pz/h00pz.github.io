@@ -33,6 +33,8 @@ In PortfolioOS, or pOS (my portfolio research and decision system), I don't want
 
 Each of those jobs can be evaluated independently, and each can use a model appropriate to the task. More importantly, each worker can fail without taking the entire system with it. That's where small models become much more interesting because the smaller model is no longer being asked to compensate for the absence of architecture.
 
+Eugene Yan argues the same thing from the systems-design side. His <a href="https://eugeneyan.com/writing/llm-patterns/" target="_blank" rel="noopener">patterns for building LLM systems</a> push against monoliths deliberately: separate models for separate tasks, retrieval so the model only has to handle what it's genuinely good at, each piece measurable on its own. The narrow job isn't a limitation you tolerate for a small model. It's the thing that makes the small model's behavior legible in the first place.
+
 ## The Boundary Is the Architecture
 
 A model shouldn't receive whatever context might be useful. It should receive the smallest complete set of information required to perform its job. That distinction sounds minor, but it changes almost everything about the system because it forces you to decide what the worker owns and what belongs elsewhere.

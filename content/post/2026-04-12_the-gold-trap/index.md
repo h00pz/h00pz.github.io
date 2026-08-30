@@ -214,6 +214,8 @@ The fix was not a smarter model. It was a check that runs when the brief is asse
 
 ## Small Models Need Jobs
 
+It's worth saying why I'm on small models at all, because it isn't the usual reason. The industry has started recommending them for cost and latency, and Thoughtworks now <a href="https://www.thoughtworks.com/radar/techniques/small-language-models" target="_blank" rel="noopener">names small language models the default choice</a> for agentic work, reserving the big ones for when you actually need them. I agree with the conclusion, but I reached it from somewhere else: I self-host, and small models are what let me own the entire stack instead of renting it from a vendor whose pricing, terms, and availability I don't control. Sovereignty is the reason; the Gold Trap is the bill. The day you decide to run your own small models, the nuance ceiling in this post stops being academic and becomes the precise thing you have to design around.
+
 There's a temptation when designing systems around small models to treat them as interchangeable compute.
 
 Put the cheap model here. Put the smart model there. Use the big-context model for ingestion. Send the difficult questions to the larger model.

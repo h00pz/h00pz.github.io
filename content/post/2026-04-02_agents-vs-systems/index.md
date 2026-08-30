@@ -36,6 +36,8 @@ My first instinct was similar to what I see in a lot of AI projects today: build
 
 You can answer all of these questions with prompts, but I eventually concluded that I didn't want to. Once I started asking these questions seriously, I realized I wasn't dealing with an AI problem anymore. I was dealing with a distributed systems problem that happened to contain AI.
 
+I wasn't the only one landing here. Anthropic, writing from the other side of the industry, tells developers the same thing in plainer words: most production systems should be <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">workflows, where code decides the path</a>, not agents where the model decides it, and you should only reach for a real agent when the job genuinely needs one. I got there by watching my own system rot, but the conclusion is the same, and it's becoming the boring consensus for a reason.
+
 ## Models Are Really Good At Some Things
 
 None of this is an argument against using models. Quite the opposite. The reason I keep building these systems is because language models can do things that would have been extremely difficult to automate a few years ago.

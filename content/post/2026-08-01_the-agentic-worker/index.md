@@ -82,6 +82,8 @@ And the last bar, the one that actually lets me run this at all: it defers. The 
 
 I said the tools are all read-only, and the prompt says so too, but the prompt is not where that's enforced, and if it were I wouldn't run this. If the only thing between the agent and a write were a sentence asking it nicely, one clever prompt injection or one confidently wrong reasoning step is all it would take. The limits are structural, and they live in three places, none of them the prompt.
 
+Simon Willison reached a sharp version of this from the security side. His <a href="https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/" target="_blank" rel="noopener">Dual-LLM pattern</a> splits the roles so the model that can act never reads untrusted input, and the model that reads untrusted input can't act. My cage is the same instinct pointed at a single agent: it gets to see everything and touch nothing, because what it can see and what it can do are drawn by different code.
+
 The first is the module boundary. The agent never holds a database connection, because it can't. It doesn't import a store, a schema, or another subsystem's internals. Its entire reach into the system is a single injected seam client, which is a base URL and a fetch and nothing else:
 
 ```typescript
