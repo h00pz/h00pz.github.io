@@ -67,6 +67,27 @@ That's the whole reveal, and it's why "how many parameters?" is the wrong openin
 
 The academic version of this point is worth a link, because it's the clearest statement of why the cache dominates: the vLLM team's <a href="https://arxiv.org/abs/2309.06180" target="_blank" rel="noopener">PagedAttention paper</a> reframes LLM serving as fundamentally a KV-cache memory-management problem. Different engine, same physics. Context is memory, and how well an engine packs that memory is most of the game.
 
+## The Actual Timeline
+
+None of this was the clean three-step story the sections above might suggest. It was a couple of months of testing, in waves, and the real log looks more like this:
+
+| Date | Model | What I was testing | What happened |
+| --- | --- | --- | --- |
+| May 17 | Qwen3-8B (FP8) | single-3090 bootstrap, extraction | the baseline; fit comfortably, good at mechanical extraction |
+| May 17–18 | Qwen3-14B (FP8) | does more VRAM buy better judgment? | ~21 GB at 32K, matched the 8B on the Gold trap, parked |
+| May 18 | Qwen3.5-35B-A3B (FP8) | larger MoE deep-ingest and nuance | pushed me to distributed vLLM/Ray; total residency mattered despite ~3B active |
+| May 18 | Qwen2.5-14B-Instruct-1M | long-context middle tier | huge advertised window, not the winner |
+| May 18 | Gemma 3 12B | native long-context alternative | native 128K made it worth a serious look |
+| May 24 | Gemma 4 31B | structural reasoning and judgment | the structural leader that wave |
+| May 24 | Gemma 4 26B-A4B | faster Gemma alternative | promising, inconclusive at first |
+| May 28 | Qwen3-8B + Gemma 4 26B-A4B (GGUF) | real evidence-ingest routing | a scar: Gemma passes were misrouted to Qwen until per-alias routing and provenance got fixed |
+| June 10 | Gemma 4 26B | pairwise adjudication vs the thesis graph | clean, ten groups no failures; became the governed judgment model |
+| June (later) | Gemma 4 12B | high-context compiler | the memory surprise, and ultimately the compiler choice |
+| June/July | a Qwen comparison lane | long-context compiler | ~21.6 GB at 96K (exact checkpoint still to verify) |
+| June/July | Gemma 4 12B (Q4-QAT GGUF) | maximum and practical long context | 128K at ~9.7 GB, 222K at ~10.2 GB, 100% recall; settled near 160K, ~144K in, ~16K out |
+
+Three rough waves are visible in there. The first was just *how much model can I get onto a 3090*, which is how the 8B and then the 14B happened. The second was *which model is better at which job*, once the 8B and 14B tied on the Gold trap and Gemma started pulling ahead on nuance. The third was memory and context blowing up the simple sizing model entirely, where a 12B became the high-context compiler, the 26B became the adjudicator, and the 8B stayed the mechanical extractor. The coding-assistant, vision, and speech models I also ran through Darkpool are a different branch of the story, left out here on purpose.
+
 ## So, How Big Is a Model?
 
 Line the experiments up and the question in the title falls apart in a useful way. Qwen3-8B is small and leaves room. Qwen3-14B is bigger and leaves almost none. The 35B MoE is enormous in memory and modest in compute. And a 12B ran more context on half the VRAM of a 14B. Every one of those is the same nominal "how big," and they answer completely differently, because size isn't a property of the weights. It's a property of the weights plus the quantization plus the engine plus the context you ask it to hold plus how many callers hit it at once.
