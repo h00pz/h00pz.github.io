@@ -28,3 +28,8 @@
 -}}
 <script type="application/ld+json">{{ $d | jsonify | safeJS }}</script>
 {{- end -}}
+
+{{/* GoatCounter analytics: cookieless, privacy-first, outbound-only. Production builds only. */}}
+{{- if hugo.IsProduction -}}
+<script data-goatcounter="https://h00pz.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{{- end -}}
