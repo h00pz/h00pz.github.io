@@ -73,18 +73,18 @@ None of this was the clean three-step story the sections above might suggest. It
 
 | Date | Model | What I was testing | What happened |
 | --- | --- | --- | --- |
-| May 17 | Qwen3-8B (FP8) | single-3090 bootstrap, extraction | the baseline; fit comfortably, good at mechanical extraction |
-| May 17–18 | Qwen3-14B (FP8) | does more VRAM buy better judgment? | ~21 GB at 32K, matched the 8B on the Gold trap, parked |
-| May 18 | Qwen3.5-35B-A3B (FP8) | larger MoE deep-ingest and nuance | pushed me to distributed vLLM/Ray; total residency mattered despite ~3B active |
-| May 18 | Qwen2.5-14B-Instruct-1M | long-context middle tier | huge advertised window, not the winner |
-| May 18 | Gemma 3 12B | native long-context alternative | native 128K made it worth a serious look |
-| May 24 | Gemma 4 31B | structural reasoning and judgment | the structural leader that wave |
-| May 24 | Gemma 4 26B-A4B | faster Gemma alternative | promising, inconclusive at first |
-| May 28 | Qwen3-8B + Gemma 4 26B-A4B (GGUF) | real evidence-ingest routing | a scar: Gemma passes were misrouted to Qwen until per-alias routing and provenance got fixed |
-| June 10 | Gemma 4 26B | pairwise adjudication vs the thesis graph | clean, ten groups no failures; became the governed judgment model |
-| June (later) | Gemma 4 12B | high-context compiler | the memory surprise, and ultimately the compiler choice |
-| June/July | a Qwen comparison lane | long-context compiler | ~21.6 GB at 96K (exact checkpoint still to verify) |
-| June/July | Gemma 4 12B (Q4-QAT GGUF) | maximum and practical long context | 128K at ~9.7 GB, 222K at ~10.2 GB, 100% recall; settled near 160K, ~144K in, ~16K out |
+| April 2 | Qwen3-8B (FP8) | single-3090 bootstrap, extraction | the baseline; fit comfortably, good at mechanical extraction |
+| April 4–5 | Qwen3-14B (FP8) | does more VRAM buy better judgment? | ~21 GB at 32K, matched the 8B on the Gold trap, parked |
+| April 7 | Qwen3.5-35B-A3B (FP8) | larger MoE deep-ingest and nuance | pushed me to distributed vLLM/Ray; total residency mattered despite ~3B active |
+| April 8 | Qwen2.5-14B-Instruct-1M | long-context middle tier | huge advertised window, not the winner |
+| April 10 | Gemma 3 12B | native long-context alternative | native 128K made it worth a serious look |
+| April 24 | Gemma 4 31B | structural reasoning and judgment | the structural leader that wave |
+| April 25 | Gemma 4 26B-A4B | faster Gemma alternative | promising, inconclusive at first |
+| April 29 | Qwen3-8B + Gemma 4 26B-A4B (GGUF) | real evidence-ingest routing | a scar: Gemma passes were misrouted to Qwen until per-alias routing and provenance got fixed |
+| May 10 | Gemma 4 26B | pairwise adjudication vs the thesis graph | clean, ten groups no failures; became the governed judgment model |
+| May (later) | Gemma 4 12B | high-context compiler | the memory surprise, and ultimately the compiler choice |
+| May/June | a Qwen comparison lane | long-context compiler | ~21.6 GB at 96K (exact checkpoint still to verify) |
+| May/June | Gemma 4 12B (Q4-QAT GGUF) | maximum and practical long context | 128K at ~9.7 GB, 222K at ~10.2 GB, 100% recall; settled near 160K, ~144K in, ~16K out |
 
 Three rough waves are visible in there. The first was just *how much model can I get onto a 3090*, which is how the 8B and then the 14B happened. The second was *which model is better at which job*, once the 8B and 14B tied on the Gold trap and Gemma started pulling ahead on nuance. The third was memory and context blowing up the simple sizing model entirely, where a 12B became the high-context compiler, the 26B became the adjudicator, and the 8B stayed the mechanical extractor. The coding-assistant, vision, and speech models I also ran through Darkpool are a different branch of the story, left out here on purpose.
 
