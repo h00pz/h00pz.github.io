@@ -1,6 +1,6 @@
-# The Rambling Thoughts of h00pz
+# Confidently Wrong
 
-Source for **[h00pz.github.io](https://h00pz.github.io/)** — a running essay series on how to actually build AI applications: bounding model inference inside real architecture instead of handing the whole system to an agent.
+Source for **[h00pz.github.io](https://h00pz.github.io/)** — a running essay series on how to actually build AI systems: bounding model inference inside real architecture instead of handing the whole system to an agent. Broadening over time into OpenShift, Ansible, and agentic automation.
 
 The argument runs on two real systems I build:
 
