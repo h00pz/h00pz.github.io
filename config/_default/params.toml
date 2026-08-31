@@ -12,7 +12,7 @@ favicon = "img/favicon.png"
 
 [sidebar]
     emoji = ""
-    subtitle = "Small models, real architecture. Building PortfolioOS and Atlas in the open, and writing down what being wrong taught me."
+    subtitle = "Small models, real architecture. Building PortfolioOS and Atlas, and writing down what being wrong taught me."
     avatar = "img/avatar.png"
 
 [article]

@@ -2,10 +2,12 @@
 
 Source for **[h00pz.github.io](https://h00pz.github.io/)** — a running essay series on how to actually build AI applications: bounding model inference inside real architecture instead of handing the whole system to an agent.
 
-The argument runs on two real systems I build in the open:
+The argument runs on two real systems I build:
 
 - **PortfolioOS (pOS)** — a self-hosted financial system: market intelligence, research, portfolio construction, and ongoing maintenance, built around small, self-hosted models.
 - **Atlas** — a personal-knowledge system built on the same principles.
+
+Neither is open source and there's no public repo for the code. What's shared here is the architecture, the reasoning, and real artifacts pulled straight from the systems (see [`examples/`](examples/)).
 
 The through-line: the model is a bounded component, not the architecture. Small models for sovereignty, explicit seams, persistent state the system owns, deterministic code around the probabilistic part, and failure treated as a first-class outcome.
 
@@ -19,7 +21,7 @@ Posts are grouped into three arcs (the site's categories):
 
 ## `examples/`
 
-Real artifacts referenced from the posts, linked as new-tab GitHub blob links rather than rendered pages: architecture specs and plans, the HASF and HADH documents, a prompt ConfigMap, and two full weekend-brief PDFs. If a post points at a file, it lives here.
+Real artifacts reproduced from the (otherwise private) systems and referenced from the posts, linked as new-tab GitHub blob links rather than rendered pages: architecture specs and plans, the HASF and HADH documents, a prompt ConfigMap, and two full weekend-brief PDFs. If a post points at a file, it lives here.
 
 ## Build locally
 
