@@ -8,7 +8,7 @@ menu:
 comments: false
 ---
 
-I'm Mark Hooper. Online, and on this blog, I go by **h00pz**.
+I'm Mark Hooper. Online, and on this blog, I go by **h00pz**. The name is older than any of this. Day one at Brak Systems I showed up as the second Mark in the room, and with a last name like Hooper the jump to Hoopz was short. My dad answered to the same nickname, so I came by it honestly.
 
 I'm a Principal Solution Architect at Red Hat, based in Chicago, and I spent a couple of decades in security and infrastructure getting here, holding the certifications that come with that life (CISSP, CISA, CISM, CCSP) and, more usefully, collecting the scar tissue those letters don't mention. My work lives in the Kubernetes and OpenShift world, which is not an accident you'll fail to notice reading this blog. When I reach for a way to run AI work reliably, I keep reaching for the reconciliation loop, because it's what my hands already know.
 
