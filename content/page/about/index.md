@@ -24,4 +24,6 @@ The blog is one long argument, made in pieces: the model is a bounded component,
 
 Everything here is an opinion from building real things, and it gets revised when the real things teach me something new. If a post argues with a post I wrote six months ago, that's the system working, not a bug.
 
-You can find me on [GitHub](https://github.com/h00pz) and [LinkedIn](https://www.linkedin.com/in/mark-hooper-8837b64/).
+The views on this blog are my own. They don't represent Red Hat, and nothing here is written on their behalf.
+
+You can find me on [GitHub](https://github.com/h00pz) and [LinkedIn](https://www.linkedin.com/in/mark-hooper-8837b64/), or by email at [mh@h00pz.co](mailto:mh@h00pz.co) for anything about this blog, or [mhooper@redhat.com](mailto:mhooper@redhat.com) for work.
