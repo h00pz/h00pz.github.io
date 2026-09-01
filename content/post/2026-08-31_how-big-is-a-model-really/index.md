@@ -61,7 +61,7 @@ Running under llama.cpp, this one was Q4 quantized, a heavier compression than t
 | Decode throughput | ~65 to 86 tok/s |
 | 144K-token prefill | ~49.6 sec |
 
-Set that against the earlier data point: my Qwen comparison lane was using roughly 21.6 GB at a 96K context. So one model was brushing the ceiling of a 24 GB card at 96K, and another was sitting around 10 GB while running well past 128K. Same class of hardware. A "smaller" model, by parameter count, with dramatically better context economics.
+Set that against the earlier data point: a Qwen3-8B, in FP8 with YaRN context extension, was using around 21.3 to 21.6 GB to reach a 128K context. So an eight-billion-parameter model was brushing the ceiling of a 24 GB card at 128K, and a twelve-billion one was sitting near 10 GB at that same 128K and still climbing well past 200K. Same class of hardware, same context length, and the model that's larger on paper had dramatically better context economics.
 
 That's the whole reveal, and it's why "how many parameters?" is the wrong opening question. Parameter count did not predict the thing I actually cared about, which was how much context I could carry and what it cost me to carry it. That number is set by the model, the quantization, the inference engine, and the KV-cache configuration together, and llama.cpp's memory behavior on this particular model is doing a lot of the work. The meaningful unit isn't "Gemma 12B." It's model plus quantization plus engine plus context config plus workload. Two deployments of nominally the same model can have completely different memory profiles, and the sizing table on a model card knows about exactly one of those factors.
 
@@ -83,7 +83,7 @@ None of this was the clean three-step story the sections above might suggest. It
 | April 29 | Qwen3-8B + Gemma 4 26B-A4B (GGUF) | real evidence-ingest routing | a scar: Gemma passes were misrouted to Qwen until per-alias routing and provenance got fixed |
 | May 10 | Gemma 4 26B | pairwise adjudication vs the thesis graph | clean, ten groups no failures; became the governed judgment model |
 | May (later) | Gemma 4 12B | high-context compiler | the memory surprise, and ultimately the compiler choice |
-| May/June | a Qwen comparison lane | long-context compiler | ~21.6 GB at 96K (exact checkpoint still to verify) |
+| May/June | Qwen3-8B (FP8, YaRN) | long-context compiler comparison | ~21.3–21.6 GB at 128K, ~89–90% of the card |
 | May/June | Gemma 4 12B (Q4-QAT GGUF) | maximum and practical long context | 128K at ~9.7 GB, 222K at ~10.2 GB, 100% recall; settled near 160K, ~144K in, ~16K out |
 
 Three rough waves are visible in there. The first was just *how much model can I get onto a 3090*, which is how the 8B and then the 14B happened. The second was *which model is better at which job*, once the 8B and 14B tied on the Gold trap and Gemma started pulling ahead on nuance. The third was memory and context blowing up the simple sizing model entirely, where a 12B became the high-context compiler, the 26B became the adjudicator, and the 8B stayed the mechanical extractor. The coding-assistant, vision, and speech models I also ran through Darkpool are a different branch of the story, left out here on purpose.
@@ -94,6 +94,6 @@ Line the experiments up and the question in the title falls apart in a useful wa
 
 So the honest answer to "how big is this model" is a question back: to hold what, on what, for how many people? Parameter count tells you how big the model is. It tells you nothing about how big the *workload* is, and the workload is the thing your GPU actually has to contain.
 
-I'll flag one honesty about my own numbers before I hand off. The Gemma memory figures came out so close across 128K and 222K that I want to be careful I was reading actively-used VRAM and not a preallocated cache, and the exact Qwen checkpoint behind that 21.6 GB is the kind of thing I'd pin down before betting anything larger than a blog post on it. Real measurements still carry the method they were measured with, and I'm reporting these as what I saw, not as a benchmark I'd defend to three decimal places.
+I'll flag one honesty about my own numbers before I hand off. The Gemma memory figures came out so close across 128K and 222K that I want to be careful I was reading actively-used VRAM and not a preallocated cache. All of these are GPU VRAM, by the way, measured on 64 GB nodes where host memory was never the binding resource; the 24 GB card was. Real measurements still carry the method they were measured with, and I'm reporting these as what I saw, not as a benchmark I'd defend to three decimal places.
 
 That leaves the question the Gemma result opened and didn't answer. If a 12B can carry two hundred thousand tokens of context, how much of that should I actually use? Because it turns out the amount of context your application needs, the amount your hardware can sustain, and the amount the model advertises are three different numbers, and confusing them is its own expensive mistake. That's the next post.

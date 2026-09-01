@@ -31,7 +31,16 @@ That splits "context window" into three things people say interchangeably and sh
 
 Every token of context you spend shows up on three separate invoices, and memory is only the first.
 
-**Memory** is the one the last post covered: the KV cache grows with context length, and it grows again with every concurrent request, because each live sequence carries its own attention state.
+**Memory** is the one the last post covered: the KV cache grows with context length, and it grows again with every concurrent request, because each live sequence carries its own attention state. It's worth seeing that first invoice across models, on the one card that actually sets the limit. These are all GPU VRAM footprints on a 24 GB RTX 3090 (host RAM on the 64 GB nodes was never the binding resource, so it isn't the story):
+
+| Model | Context | GPU VRAM | % of the 3090 |
+| --- | ---: | ---: | ---: |
+| Qwen3-14B (FP8) | 32K | ~21.0 GB | 88% |
+| Qwen3-8B (FP8, YaRN) | 128K | ~21.3–21.6 GB | 89–90% |
+| Gemma 4 12B (Q4-QAT) | 128K | ~9.7 GB | 40% |
+| Gemma 4 12B (Q4-QAT) | 222K | ~10.2 GB | 43% |
+
+Read the two ends of that. A 14B at a mere 32K and an 8B stretched to 128K both nearly fill the card, while a 12B runs past two hundred thousand tokens on less than half of it. Same 24 GB, wildly different amounts of context bought, and the parameter count pointing exactly the wrong way. That's the argument in four rows: the model fits, and how much context you can afford to put in front of it is the number that actually moves.
 
 **Latency** is the one that ambushes you even when memory says yes. Take the Gemma numbers from last time: it decoded at a healthy 65 to 86 tokens a second, but a 144K-token prefill, the work of reading the context before generating a single new token, took about 49.6 seconds. Prefill and decode are different latency domains. A model with great decode throughput can still feel glacial when every request opens by chewing through a hundred thousand tokens of context. Even when the card has the memory, the clock may not have the patience.
 
