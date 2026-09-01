@@ -31,16 +31,19 @@ That splits "context window" into three things people say interchangeably and sh
 
 Every token of context you spend shows up on three separate invoices, and memory is only the first.
 
-**Memory** is the one the last post covered: the KV cache grows with context length, and it grows again with every concurrent request, because each live sequence carries its own attention state. It's worth seeing that first invoice across models, on the one card that actually sets the limit. These are all GPU VRAM footprints on a 24 GB RTX 3090 (host RAM on the 64 GB nodes was never the binding resource, so it isn't the story):
+**Memory** is the one the last post covered: the KV cache grows with context length, and it grows again with every concurrent request, because each live sequence carries its own attention state. It's worth seeing that first invoice across models, on the one card that actually sets the limit. These are all GPU VRAM footprints on a 24 GB RTX 3090 (host RAM on the 64 GB nodes was never the binding resource, so it isn't the story). The `max-num-seqs` column is how many requests the server will handle at once, and it matters because those concurrent sequences compete with context for the same KV-cache memory:
 
-| Model | Context | GPU VRAM | % of the 3090 |
-| --- | ---: | ---: | ---: |
-| Qwen3-14B (FP8) | 32K | ~21.0 GB | 88% |
-| Qwen3-8B (FP8, YaRN) | 128K | ~21.3–21.6 GB | 89–90% |
-| Gemma 4 12B (Q4-QAT) | 128K | ~9.7 GB | 40% |
-| Gemma 4 12B (Q4-QAT) | 222K | ~10.2 GB | 43% |
+| Model | Context | max-num-seqs | GPU VRAM | % of the 3090 |
+| --- | ---: | ---: | ---: | ---: |
+| Qwen3-14B (FP8) | 32K | 2 | ~21.0 GB | 88% |
+| Qwen3-8B (FP8, YaRN) | 128K | 2 | ~21.3–21.6 GB | 89–90% |
+| Gemma 4 12B (Q4-QAT) | 128K | 1 | ~9.7 GB | 40% |
+| Gemma 4 12B (Q4-QAT) | 222K | 1 | ~10.2 GB | 43% |
+| Gemma 4 26B (Q4_K_M) | 84K | 1 | ~19.25 GB | 80% |
 
-Read the two ends of that. A 14B at a mere 32K and an 8B stretched to 128K both nearly fill the card, while a 12B runs past two hundred thousand tokens on less than half of it. Same 24 GB, wildly different amounts of context bought, and the parameter count pointing exactly the wrong way. That's the argument in four rows: the model fits, and how much context you can afford to put in front of it is the number that actually moves.
+Read the two ends of that. A 14B at a mere 32K and an 8B stretched to 128K both nearly fill the card, while a 12B runs past two hundred thousand tokens on less than half of it. Same 24 GB, wildly different amounts of context bought, and the parameter count pointing exactly the wrong way.
+
+The 26B is the row that shows the other half of the lever. Its 84K is a fixed KV pool, and `max-num-seqs` decides how it gets shared: at two sequences each request gets about 42K, and to hand a single request the full 84K I dropped it to one sequence. The measured part is the satisfying bit. At that 84K pool the card reads about 19.25 GB of its 24, roughly 5 GB of headroom, and moving context around inside the pool costs almost nothing, because for this model the weights (around 15 GB) dominate and the KV cache is small: raising the per-request window from 32K to 42K moved VRAM by about a third of a gigabyte. That's the opposite shape from the Qwen rows above, where a smaller model was brushing the ceiling on a fatter KV footprint. Same card, and how big the context bill runs depends entirely on which model is spending it. That's the argument in the table: the model fits, and everything you care about, how much context and how many callers, is a negotiation over the one card's memory.
 
 **Latency** is the one that ambushes you even when memory says yes. Take the Gemma numbers from last time: it decoded at a healthy 65 to 86 tokens a second, but a 144K-token prefill, the work of reading the context before generating a single new token, took about 49.6 seconds. Prefill and decode are different latency domains. A model with great decode throughput can still feel glacial when every request opens by chewing through a hundred thousand tokens of context. Even when the card has the memory, the clock may not have the patience.
 
