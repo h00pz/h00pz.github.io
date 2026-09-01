@@ -1,0 +1,70 @@
+{
+  "annotations": { "list": [] },
+  "editable": false,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Running requests",
+      "gridPos": { "h": 7, "w": 8, "x": 0, "y": 0 },
+      "targets": [
+        { "expr": "vllm:num_requests_running", "legendFormat": "{{model_name}} running" },
+        { "expr": "vllm:num_requests_waiting", "legendFormat": "{{model_name}} waiting" }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Request rate (req/s)",
+      "gridPos": { "h": 7, "w": 8, "x": 8, "y": 0 },
+      "targets": [
+        { "expr": "sum by (model_name) (rate(vllm:request_success_total[5m]))", "legendFormat": "{{model_name}} success" },
+        { "expr": "sum by (model_name) (rate(vllm:request_failure_total[5m]))", "legendFormat": "{{model_name}} failure" }
+      ]
+    },
+    {
+      "type": "singlestat",
+      "title": "Generation tokens (total)",
+      "gridPos": { "h": 7, "w": 8, "x": 16, "y": 0 },
+      "targets": [ { "expr": "sum(vllm:generation_tokens_total)" } ]
+    },
+    {
+      "type": "graph",
+      "title": "Prompt token throughput (tok/s)",
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 7 },
+      "targets": [
+        { "expr": "sum by (model_name) (rate(vllm:prompt_tokens_total[5m]))", "legendFormat": "{{model_name}}" }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Generation token throughput (tok/s)",
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 7 },
+      "targets": [
+        { "expr": "sum by (model_name) (rate(vllm:generation_tokens_total[5m]))", "legendFormat": "{{model_name}}" }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "End-to-end request latency (s)",
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 14 },
+      "targets": [
+        { "expr": "histogram_quantile(0.50, sum by (le, model_name) (rate(vllm:e2e_request_latency_seconds_bucket[5m])))", "legendFormat": "{{model_name}} p50" },
+        { "expr": "histogram_quantile(0.95, sum by (le, model_name) (rate(vllm:e2e_request_latency_seconds_bucket[5m])))", "legendFormat": "{{model_name}} p95" },
+        { "expr": "histogram_quantile(0.99, sum by (le, model_name) (rate(vllm:e2e_request_latency_seconds_bucket[5m])))", "legendFormat": "{{model_name}} p99" }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Time to first token (s, e2e proxy)",
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 14 },
+      "targets": [
+        { "expr": "histogram_quantile(0.95, sum by (le, model_name) (rate(vllm:time_to_first_token_seconds_bucket[5m])))", "legendFormat": "{{model_name}} p95" }
+      ]
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 16,
+  "time": { "from": "now-6h", "to": "now" },
+  "timezone": "UTC",
+  "title": "vLLM — gemma-4 model serving"
+}
