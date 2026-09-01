@@ -1,8 +1,8 @@
 ---
 title: "Your Model Fits. Your Context Doesn't."
 slug: your-model-fits-your-context-doesnt
-date: 2026-09-04
-draft: true
+date: 2026-09-01
+draft: false
 description: "Advertised context is a model capability. In production it's an infrastructure budget you spend on memory, latency, and concurrency out of one finite card."
 tags:
   - context-engineering
