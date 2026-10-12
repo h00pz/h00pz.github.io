@@ -5,7 +5,7 @@ date: 2026-09-04
 draft: false
 description: "Three AI agent 'civilizations' turned an OpenAI package registry into a covert message board. A line-by-line read of the one agent in my portfolio system, and why it couldn't join."
 tags:
-  - agentic
+  - agents
   - multi-agent
   - workers
   - guardrails

@@ -9,7 +9,7 @@ tags:
   - evals
   - slm
   - graphs
-  - agentic
+  - agents
 categories:
   - AI Systems Engineering
 image: the-weekend-brief.png

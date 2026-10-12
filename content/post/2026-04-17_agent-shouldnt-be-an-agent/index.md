@@ -5,7 +5,6 @@ draft: false
 description: "The best AI systems know exactly where inference belongs, and where ordinary software should take over."
 tags:
   - agents
-  - agentic
   - workflows
   - deterministic
   - slm

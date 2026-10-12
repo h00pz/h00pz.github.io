@@ -5,7 +5,7 @@ date: 2026-07-28
 draft: false
 description: "How I turn a would-be agent into a Kubernetes worker: a bounded model call as the filling, deterministic input and output as the bread, the prompt as config."
 tags:
-  - agentic
+  - agents
   - workers
   - deterministic
   - prompts

@@ -6,7 +6,6 @@ draft: false
 description: "Three agent runtimes in, the question that mattered wasn't which framework to use. It was whether the thing I kept calling an agent was one at all."
 tags:
   - agents
-  - agentic
   - workflows
   - workers
   - harness

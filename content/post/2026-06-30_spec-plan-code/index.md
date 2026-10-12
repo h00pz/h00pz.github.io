@@ -7,7 +7,6 @@ description: "Coding agents write implementation before anyone agrees what to bu
 tags:
   - spec-driven-development
   - agents
-  - agentic
   - workers
   - harness
 categories:

@@ -9,7 +9,7 @@ tags:
   - workers
   - bounded-inference
   - deterministic
-  - agentic
+  - agents
 categories:
   - AI Systems Engineering
 image: event-driven-ai.png

@@ -5,7 +5,6 @@ date: 2026-08-01
 draft: false
 description: "Most of what I build stops the model from being an agent. This is the rare place I let one loop over tools until it answers, and the cage that makes it safe."
 tags:
-  - agentic
   - agents
   - workers
   - tools

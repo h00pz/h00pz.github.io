@@ -9,7 +9,7 @@ tags:
   - agents
   - memory
   - skills
-  - persistent-state
+  - state
   - spec-driven-development
 categories:
   - AI Coding Scar Tissue
