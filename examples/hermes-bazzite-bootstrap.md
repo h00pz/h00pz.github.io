@@ -41,31 +41,47 @@ mkdir -p ~/.local/bin
 ln -sf ~/.hermes/venvs/hermes-dev/bin/hermes ~/.local/bin/hermes
 ```
 
-## 3. Steal config from the existing harness
+## 3. Configure Hermes
 
-Rather than reconfigure from scratch, rsync the live config, secrets, skills, and
-memory off the already-working remote so the local agent comes up with the same
-reflexes. Deliberately skip the multi-gig venv and the large `state.db`.
+Fresh install: let the wizard write the config. It creates `~/.hermes/config.yaml`,
+an empty `memories/`, and registers the built-in skills.
 
 ```bash
-REMOTE=cloud-user@hermes.h00pz.co
-rsync -av $REMOTE:~/.hermes/config.yaml        ~/.hermes/
-rsync -av $REMOTE:~/.hermes/.env               ~/.hermes/      # secrets
-rsync -av $REMOTE:~/.hermes/skills/            ~/.hermes/skills/
-rsync -av $REMOTE:~/.hermes/memories/          ~/.hermes/memories/
-rsync -av $REMOTE:~/.hermes/hindsight/config.json ~/.hermes/hindsight/
-# NOT copied: ~/.hermes/venvs (rebuilt above), ~/.hermes/**/state.db (local starts fresh)
+hermes setup        # interactive wizard; writes ~/.hermes/config.yaml
 ```
+
+You start with the shipped skill library. Project-specific skills you add yourself
+(for example the Hermes-authored HASF spec-authoring skill in
+[`examples/hermes-hasf-spec-authoring.md`](https://github.com/h00pz/h00pz.github.io/blob/main/examples/hermes-hasf-spec-authoring.md)),
+and the agent writes more as it digests your work.
+
+> **Already running Hermes on another machine?** You can clone its reflexes instead
+> of redoing the wizard: rsync its config, skills, and memory across. Skip the
+> multi-gig venv and the large `state.db` — both are machine-local and rebuild
+> fresh. This is the shortcut I used off my own remote; it is not a requirement,
+> and it only helps if *you* already have a harness to copy from.
+> ```bash
+> REMOTE=you@your-existing-hermes-host     # your box, not mine
+> rsync -av $REMOTE:~/.hermes/config.yaml  ~/.hermes/
+> rsync -av $REMOTE:~/.hermes/skills/      ~/.hermes/skills/
+> rsync -av $REMOTE:~/.hermes/memories/    ~/.hermes/memories/
+> # NOT copied: ~/.hermes/venvs (rebuilt above), ~/.hermes/**/state.db (starts fresh)
+> ```
 
 ## 4. Auth
 
-Hermes is registered with the `anthropic` provider using the `claude_code`
-credential — the Claude Pro/Max OAuth login, **not** an API key. It works locally
-with no extra setup once `.env` is in place.
+Register a credential for the `anthropic` provider. The Claude Pro/Max login is
+OAuth, **not** an API key: Hermes stores it as a pooled OAuth credential and opens
+a browser for you to sign in.
 
 ```bash
-hermes -z "say hi"   # smoke test; should return a completion
+hermes auth add anthropic --type oauth   # opens a browser; sign in with Claude Pro/Max
+hermes auth status anthropic             # confirm it registered
+hermes -z "say hi"                       # smoke test; should return a completion
 ```
+
+(Prefer an Anthropic API key? `hermes auth add anthropic --type api-key`. Then the
+gotcha below does not bite, because a key *can* be handed to a subprocess.)
 
 > **Gotcha that matters later:** Pro/Max is OAuth, not a key. Any *subprocess*
 > that wants its own API key — notably hindsight's extraction LLM — cannot borrow
