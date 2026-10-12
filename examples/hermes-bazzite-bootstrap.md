@@ -150,7 +150,8 @@ Prefer `holographic` unless you specifically need the synthesis.
 
 `local_embedded` runs a local embedder (bge-small) + cross-encoder reranker and a
 **local embedded Postgres** (pgvector), but fact *extraction* is an LLM call that
-needs a **tool-calling** model. Point it at a model you serve.
+needs a **tool-calling** model. Point it at a model you serve — I use Qwen-3.8-27B,
+but anything that tool-calls works. Swap the two endpoint fields below for your own.
 
 `~/.hermes/hindsight/config.json` (the load-bearing fields):
 
@@ -158,8 +159,8 @@ needs a **tool-calling** model. Point it at a model you serve.
 {
   "mode": "local_embedded",
   "llm_provider": "openai_compatible",
-  "llm_model": "qwen3-8-27b",
-  "llm_base_url": "https://qwen3-8-27b-model-serving.apps.darkpool.h00pz.co/v1",
+  "llm_model": "your-tool-calling-model",
+  "llm_base_url": "https://your-model-endpoint.example/v1",
   "bank_id": "hermes",
   "recall_budget": "mid"
 }
