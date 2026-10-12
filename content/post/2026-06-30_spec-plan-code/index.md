@@ -19,7 +19,7 @@ The single most impressive and most dangerous thing about a coding agent is how 
 
 I spent a while enjoying that speed before I noticed the bill. The code an agent produces in the first thirty seconds encodes a hundred small decisions that nobody agreed to, and every one of those decisions is now load-bearing, because the tests pass and it looks done. When it turns out the boundary was wrong, or the thing it built solves a problem I'd already solved elsewhere, I don't get to keep the speed. I pay it all back, with interest, unwinding a confident implementation of the wrong idea.
 
-This post is about the discipline that got that time back, which sounds like it should be slower and is actually faster: force the work through specification, then planning, and only then code.
+The discipline that got that time back sounds like it should be slower and is actually faster: force the work through specification, then planning, and only then code.
 
 ## The Agent's Superpower Is Also the Trap
 

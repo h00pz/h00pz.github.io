@@ -16,7 +16,7 @@ image: as-built-vs-desired.png
 
 For a long time my architecture diagrams were a kind of flattering fiction. They showed the system I wished I had, drawn with confident boxes and clean arrows, and I kept mistaking that picture for documentation of the system I actually had. The two were related, the way a real estate listing is related to the apartment, but they were not the same thing, and the gap between them was exactly the information I most needed and least wanted to look at.
 
-The honest version of the problem is this. A diagram describes intent, and a running system accumulates difference. Implementation makes compromises the diagram never anticipated, discovery reveals dependencies nobody drew, and every deadline leaves a little residue of "we'll fix that later" that quietly becomes permanent. If your one architecture document tries to be both the plan and the record, it ends up being useless for both, because you can't tell from it what you're building toward or what actually exists today.
+A diagram describes intent, and a running system accumulates difference. Implementation makes compromises the diagram never anticipated, discovery reveals dependencies nobody drew, and every deadline leaves a little residue of "we'll fix that later" that quietly becomes permanent. If your one architecture document tries to be both the plan and the record, it ends up being useless for both, because you can't tell from it what you're building toward or what actually exists today.
 
 This post is about the discipline that fixed it for me, which is almost aggressively simple: keep the desired end state and the as-built reality in different documents, and never let one pretend to be the other.
 

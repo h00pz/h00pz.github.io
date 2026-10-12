@@ -94,7 +94,7 @@ An idle worker backs off exponentially, up to thirty seconds between checks, so 
 
 ## Where This Stops
 
-I want to be straight about the two places this doesn't save me, because it would be easy to read all this as solved.
+There are two places this doesn't save me, because it would be easy to read all this as solved.
 
 The first is that event-driven only moves the hard problem, it doesn't erase it. A system that runs on events is exactly as good as its triggers, and a trigger is a judgment call wearing arithmetic's clothes. Set the move threshold too high and a position slides into real trouble without ever crossing the line that wakes the review, and I find out late. Set it too low and I'm back to a flood, just a slightly more expensive one. The gate turned "how often should this run" into "what counts as something happening," which is a better question, but it's still a question I have to answer with judgment, and I can get it wrong in a way no amount of architecture will catch for me.
 

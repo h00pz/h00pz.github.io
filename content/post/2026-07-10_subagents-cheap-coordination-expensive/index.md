@@ -23,7 +23,7 @@ This post is about that asymmetry, because it changes how you should design a sy
 
 ## Cheap Is Not the Same as Free
 
-Let me be precise about what got cheap, because it's real. Launching another agent used to mean a person, a plan, and a week. Now it's an API call that returns in the time it takes to describe the task, and that collapse in cost is not nothing. It genuinely lets you attack a problem from several directions at once, and for the right kind of problem that's a real advantage.
+What got cheap is real. Launching another agent used to mean a person, a plan, and a week. Now it's an API call that returns in the time it takes to describe the task, and that collapse in cost is not nothing. It genuinely lets you attack a problem from several directions at once, and for the right kind of problem that's a real advantage.
 
 The trap is reading "cheap to spawn" as "cheap to use," and those are wildly different numbers. A spawned agent that does bounded, well-defined work and hands back a clean artifact is close to free. A spawned agent turned loose on an underspecified task, sharing state with three others, is one of the most expensive things you can add to a system, because its cost isn't in the spawning. It's in every assumption it makes that another agent has to reconcile, every piece of state it touches that another agent also touches, and every bit of ordering nobody decided on purpose.
 

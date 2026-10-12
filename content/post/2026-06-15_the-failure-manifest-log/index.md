@@ -20,7 +20,7 @@ Most software fixes a failure and moves on. Something breaks, someone diagnoses 
 
 This post is about the mechanism I use to stop doing that. On paper it has a perfectly dignified name, the Feature Memory Ledger, and a perfectly sensible job: it's how I keep track of all the work my coding agents and their subagents do, every capability they build, which one built it, and why.
 
-The acronym, though, is FML, and nobody on earth reads FML as Feature Memory Ledger. They read it as fuck my life, and honestly they're right to, because a ledger where every entry opens with something that broke is a running log of exactly that feeling. The dignified name was supposed to win. It never stood a chance. That's the rule with dark names: the one that's honest about the pain is always more memorable than the sanitized version, so it wins, and once it wins it's canon forever. I've made my peace with it and settled on the Failure Manifest Log, which is at least a version of FML I can put in a blog title.
+The acronym, though, is FML, and nobody on earth reads FML as Feature Memory Ledger. They read it as fuck my life, and they're right to, because a ledger where every entry opens with something that broke is a running log of exactly that feeling. The dignified name was supposed to win. It never stood a chance. That's the rule with dark names: the one that's honest about the pain is always more memorable than the sanitized version, so it wins, and once it wins it's canon forever. I've made my peace with it and settled on the Failure Manifest Log, which is at least a version of FML I can put in a blog title.
 
 ## The Reason Is the Part That Rots
 
@@ -100,7 +100,7 @@ Tiers move, merge, split, and disappear as the architecture learns, and even an 
 
 ## Why Not Just Use Jira?
 
-When I explain the FML, the reasonable question is why I built a ledger at all instead of using a real project tracker. I've used Jira. I'm not in a hurry to relive it. But the honest reason isn't that Jira is unpleasant, it's that Jira is in the wrong place and speaks the wrong language for the thing actually doing the work here, which is a fleet of coding agents and their subagents.
+When I explain the FML, the reasonable question is why I built a ledger at all instead of using a real project tracker. I've used Jira. I'm not in a hurry to relive it. But the real reason isn't that Jira is unpleasant, it's that Jira is in the wrong place and speaks the wrong language for the thing actually doing the work here, which is a fleet of coding agents and their subagents.
 
 Start with location. My agents don't have a Jira login, and I don't want them to have one. They live in the repository, and the only truth they can cheaply read, diff, and regenerate is the truth that lives in the repository with them. The FML is plain text, generated from a Python file, tracked in git, and reviewed in pull requests, so an agent can read the current state, propose a change to it, and have that change land through the exact same process as a code change. A ticket behind a web UI and an API token is a place an agent has to be taught to reach, remember to update, and be trusted to update honestly, and every one of those is a seam I'd rather not build.
 

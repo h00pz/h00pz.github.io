@@ -55,7 +55,7 @@ Read the whole system, change nothing. That constraint isn't a footnote. It's th
 
 ## The Cage It Loops Inside
 
-Because here's the thing I want to be exact about: I let this worker be an agent, and I trust it with essentially nothing. Both of those are true at once, and the reason they can both be true is that the freedom and the restraint are aimed at completely different things. The agent is free to *reason*. It has no authority to *act*. Everything the last two posts built is still here, wrapped around the loop instead of replacing it.
+Because I let this worker be an agent, and I trust it with essentially nothing. Both of those are true at once, and the reason they can both be true is that the freedom and the restraint are aimed at completely different things. The agent is free to *reason*. It has no authority to *act*. Everything the last two posts built is still here, wrapped around the loop instead of replacing it.
 
 The loop is bounded twice over. It runs inside a Kubernetes worker that claimed exactly one position off a queue, so the agent's entire universe is one holding, and it caps at six iterations and a token budget, so a model that wanders can't wander forever. Every tool is a GET, so the worst an out-of-control loop can do is read a lot of data and time out. And the model's final prose still lands on deterministic code that doesn't trust it. The answer is parsed into a structured judgement, and if it can't be parsed, that's an honest recorded gap, never a guessed action:
 

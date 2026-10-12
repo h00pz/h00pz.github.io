@@ -24,7 +24,7 @@ I can point at the day it stopped being abstract. That system was PortfolioOS v2
 
 That was the point where I stopped asking how to build a better agent and started asking a different question: **what if the agent is the wrong abstraction?**
 
-This post covers where that question led me while building PortfolioOS, Atlas, and eventually the **h00pz Architecture Specification Framework (HASF)**.
+That question led me through PortfolioOS, Atlas, and eventually the **h00pz Architecture Specification Framework (HASF)**.
 
 ## The Problem With The Agent
 

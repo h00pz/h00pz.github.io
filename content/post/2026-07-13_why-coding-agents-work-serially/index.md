@@ -22,7 +22,7 @@ This isn't an argument against parallelism forever. It's an argument that parall
 
 ## Parallel Assumes the Ground Holds Still
 
-Here's the thing parallelism quietly requires: the agents have to be working against assumptions that don't change while they work. If agent A and agent B are both building against a stable, agreed architecture, they can absolutely run at the same time, because neither one is going to pull the rug out from under the other. Their worlds are fixed, so their work composes.
+Parallelism quietly requires one thing: the agents have to be working against assumptions that don't change while they work. If agent A and agent B are both building against a stable, agreed architecture, they can absolutely run at the same time, because neither one is going to pull the rug out from under the other. Their worlds are fixed, so their work composes.
 
 The moment the architecture is still being figured out, that guarantee evaporates. Agent A makes a reasonable decision about a boundary, agent B makes a different reasonable decision about the same boundary, and now you have two pieces of work built on two incompatible views of a thing that was never settled. Neither agent was wrong. They were both reasoning correctly from an unstable base, and the instability is the problem, not the agents. Parallel execution doesn't just fail to help here. It actively manufactures conflict, because it takes an unresolved question and lets several workers answer it independently at speed.
 
@@ -44,8 +44,8 @@ There's a second reason I keep the agents in a line, and it might matter more th
 
 When five agents change five things at once against a moving base, the diff is a smoothie. I can't tell which change caused which effect, I can't tell whether two of them quietly disagreed, and I certainly can't trust the whole thing the way I can trust five changes I watched land one at a time. Serial execution keeps AI-generated work at a size and cadence where a human can stay in the loop, and staying in the loop is not a nice-to-have when the thing writing your code is confident, fast, and occasionally, spectacularly wrong.
 
-## Earn the Right to Parallelize
+## Parallelism Is Something You Pay For First
 
-None of this means parallelism is bad. It means parallelism is a reward you earn by stabilizing the architecture first, not a default you start with. Once the boundaries are settled, the seams are contracts, and the work decomposes into pieces that genuinely don't touch each other's assumptions, then absolutely, fan it out, because now the ground holds still and the agents can't collide.
+None of this means parallelism is bad. It means parallelism is a reward you get by stabilizing the architecture first, not a default you start with. Once the boundaries are settled, the seams are contracts, and the work decomposes into pieces that genuinely don't touch each other's assumptions, then absolutely, fan it out, because now the ground holds still and the agents can't collide.
 
 But while the architecture is still being discovered, which is most of the interesting part of any real project, serial is the honest speed. It looks slower on the diagram and it's faster in the wall-clock reality of not redoing things, and it keeps the work reviewable while it matters most. So I drive the race car in first gear on purpose, for now, because the track is still being built, and the fastest way through a course that's changing under you turns out to be one careful lap at a time.
