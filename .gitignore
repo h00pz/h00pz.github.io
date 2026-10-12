@@ -1,5 +1,9 @@
 public
 resources
+
+# Local scratch / memory-recall test artifacts (not blog content)
+hindsight_recall_test.py
+*recall_test*.py
 .hugo_build.lock
 .DS_Store
 assets/jsconfig.json
